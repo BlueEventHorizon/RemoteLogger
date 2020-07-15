@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private func testLogOut() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             guard let self = self else { return }
-            log.debug("Hellow World", instance: self)
+            log.debug(UUID().uuidString, instance: self)
             self.testLogOut()
         }
     }
