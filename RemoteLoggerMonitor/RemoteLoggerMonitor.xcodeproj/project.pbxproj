@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7647FCF524BF239B000EE3CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FCF424BF239B000EE3CA /* AppDelegate.swift */; };
+		7647FCF724BF239B000EE3CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FCF624BF239B000EE3CA /* SceneDelegate.swift */; };
+		7647FCF924BF239B000EE3CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FCF824BF239B000EE3CA /* ViewController.swift */; };
+		7647FCFC24BF239B000EE3CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FCFA24BF239B000EE3CA /* Main.storyboard */; };
+		7647FCFE24BF239D000EE3CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7647FCFD24BF239D000EE3CA /* Assets.xcassets */; };
+		7647FD0124BF239D000EE3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FCFF24BF239D000EE3CA /* LaunchScreen.storyboard */; };
+		7647FD0C24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD0B24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7647FD0824BF239D000EE3CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7647FCE924BF239B000EE3CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7647FCF024BF239B000EE3CA;
+			remoteInfo = RemoteLoggerMonitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7647FCF124BF239B000EE3CA /* RemoteLoggerMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteLoggerMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7647FCF424BF239B000EE3CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7647FCF624BF239B000EE3CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7647FCF824BF239B000EE3CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7647FCFB24BF239B000EE3CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7647FCFD24BF239D000EE3CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7647FD0024BF239D000EE3CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7647FD0224BF239D000EE3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7647FD0724BF239D000EE3CA /* RemoteLoggerMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteLoggerMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7647FD0B24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoggerMonitorTests.swift; sourceTree = "<group>"; };
+		7647FD0D24BF239D000EE3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7647FCEE24BF239B000EE3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7647FD0424BF239D000EE3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7647FCE824BF239B000EE3CA = {
+			isa = PBXGroup;
+			children = (
+				7647FCF324BF239B000EE3CA /* RemoteLoggerMonitor */,
+				7647FD0A24BF239D000EE3CA /* RemoteLoggerMonitorTests */,
+				7647FCF224BF239B000EE3CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7647FCF224BF239B000EE3CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7647FCF124BF239B000EE3CA /* RemoteLoggerMonitor.app */,
+				7647FD0724BF239D000EE3CA /* RemoteLoggerMonitorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7647FCF324BF239B000EE3CA /* RemoteLoggerMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				7647FCF424BF239B000EE3CA /* AppDelegate.swift */,
+				7647FCF624BF239B000EE3CA /* SceneDelegate.swift */,
+				7647FCF824BF239B000EE3CA /* ViewController.swift */,
+				7647FCFA24BF239B000EE3CA /* Main.storyboard */,
+				7647FCFD24BF239D000EE3CA /* Assets.xcassets */,
+				7647FCFF24BF239D000EE3CA /* LaunchScreen.storyboard */,
+				7647FD0224BF239D000EE3CA /* Info.plist */,
+			);
+			path = RemoteLoggerMonitor;
+			sourceTree = "<group>";
+		};
+		7647FD0A24BF239D000EE3CA /* RemoteLoggerMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7647FD0B24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift */,
+				7647FD0D24BF239D000EE3CA /* Info.plist */,
+			);
+			path = RemoteLoggerMonitorTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7647FCF024BF239B000EE3CA /* RemoteLoggerMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7647FD1024BF239D000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerMonitor" */;
+			buildPhases = (
+				7647FCED24BF239B000EE3CA /* Sources */,
+				7647FCEE24BF239B000EE3CA /* Frameworks */,
+				7647FCEF24BF239B000EE3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoteLoggerMonitor;
+			productName = RemoteLoggerMonitor;
+			productReference = 7647FCF124BF239B000EE3CA /* RemoteLoggerMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7647FD0624BF239D000EE3CA /* RemoteLoggerMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7647FD1324BF239D000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerMonitorTests" */;
+			buildPhases = (
+				7647FD0324BF239D000EE3CA /* Sources */,
+				7647FD0424BF239D000EE3CA /* Frameworks */,
+				7647FD0524BF239D000EE3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7647FD0924BF239D000EE3CA /* PBXTargetDependency */,
+			);
+			name = RemoteLoggerMonitorTests;
+			productName = RemoteLoggerMonitorTests;
+			productReference = 7647FD0724BF239D000EE3CA /* RemoteLoggerMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7647FCE924BF239B000EE3CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = k2terada;
+				TargetAttributes = {
+					7647FCF024BF239B000EE3CA = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					7647FD0624BF239D000EE3CA = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7647FCF024BF239B000EE3CA;
+					};
+				};
+			};
+			buildConfigurationList = 7647FCEC24BF239B000EE3CA /* Build configuration list for PBXProject "RemoteLoggerMonitor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7647FCE824BF239B000EE3CA;
+			productRefGroup = 7647FCF224BF239B000EE3CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7647FCF024BF239B000EE3CA /* RemoteLoggerMonitor */,
+				7647FD0624BF239D000EE3CA /* RemoteLoggerMonitorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7647FCEF24BF239B000EE3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7647FD0124BF239D000EE3CA /* LaunchScreen.storyboard in Resources */,
+				7647FCFE24BF239D000EE3CA /* Assets.xcassets in Resources */,
+				7647FCFC24BF239B000EE3CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7647FD0524BF239D000EE3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7647FCED24BF239B000EE3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7647FCF924BF239B000EE3CA /* ViewController.swift in Sources */,
+				7647FCF524BF239B000EE3CA /* AppDelegate.swift in Sources */,
+				7647FCF724BF239B000EE3CA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7647FD0324BF239D000EE3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7647FD0C24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7647FD0924BF239D000EE3CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7647FCF024BF239B000EE3CA /* RemoteLoggerMonitor */;
+			targetProxy = 7647FD0824BF239D000EE3CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7647FCFA24BF239B000EE3CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7647FCFB24BF239B000EE3CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7647FCFF24BF239D000EE3CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7647FD0024BF239D000EE3CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7647FD0E24BF239D000EE3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7647FD0F24BF239D000EE3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7647FD1124BF239D000EE3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerMonitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7647FD1224BF239D000EE3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerMonitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7647FD1424BF239D000EE3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerMonitorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerMonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RemoteLoggerMonitor.app/RemoteLoggerMonitor";
+			};
+			name = Debug;
+		};
+		7647FD1524BF239D000EE3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerMonitorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerMonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RemoteLoggerMonitor.app/RemoteLoggerMonitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7647FCEC24BF239B000EE3CA /* Build configuration list for PBXProject "RemoteLoggerMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7647FD0E24BF239D000EE3CA /* Debug */,
+				7647FD0F24BF239D000EE3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7647FD1024BF239D000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7647FD1124BF239D000EE3CA /* Debug */,
+				7647FD1224BF239D000EE3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7647FD1324BF239D000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7647FD1424BF239D000EE3CA /* Debug */,
+				7647FD1524BF239D000EE3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7647FCE924BF239B000EE3CA /* Project object */;
+}
