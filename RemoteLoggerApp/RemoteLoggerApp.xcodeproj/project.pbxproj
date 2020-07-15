@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2224BF23C6000EE3CA /* AppDelegate.swift */; };
+		7647FD2524BF23C6000EE3CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2424BF23C6000EE3CA /* SceneDelegate.swift */; };
+		7647FD2724BF23C6000EE3CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2624BF23C6000EE3CA /* ViewController.swift */; };
+		7647FD2A24BF23C6000EE3CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FD2824BF23C6000EE3CA /* Main.storyboard */; };
+		7647FD2C24BF23C7000EE3CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7647FD2B24BF23C7000EE3CA /* Assets.xcassets */; };
+		7647FD2F24BF23C7000EE3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */; };
+		7647FD3A24BF23C7000EE3CA /* RemoteLoggerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7647FD3624BF23C7000EE3CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7647FD1724BF23C6000EE3CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7647FD1E24BF23C6000EE3CA;
+			remoteInfo = RemoteLoggerApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteLoggerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7647FD2224BF23C6000EE3CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7647FD2424BF23C6000EE3CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7647FD2624BF23C6000EE3CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7647FD2924BF23C6000EE3CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7647FD2B24BF23C7000EE3CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7647FD2E24BF23C7000EE3CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7647FD3024BF23C7000EE3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteLoggerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoggerAppTests.swift; sourceTree = "<group>"; };
+		7647FD3B24BF23C7000EE3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7647FD1C24BF23C6000EE3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7647FD3224BF23C7000EE3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7647FD1624BF23C6000EE3CA = {
+			isa = PBXGroup;
+			children = (
+				7647FD2124BF23C6000EE3CA /* RemoteLoggerApp */,
+				7647FD3824BF23C7000EE3CA /* RemoteLoggerAppTests */,
+				7647FD2024BF23C6000EE3CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7647FD2024BF23C6000EE3CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */,
+				7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7647FD2124BF23C6000EE3CA /* RemoteLoggerApp */ = {
+			isa = PBXGroup;
+			children = (
+				7647FD2224BF23C6000EE3CA /* AppDelegate.swift */,
+				7647FD2424BF23C6000EE3CA /* SceneDelegate.swift */,
+				7647FD2624BF23C6000EE3CA /* ViewController.swift */,
+				7647FD2824BF23C6000EE3CA /* Main.storyboard */,
+				7647FD2B24BF23C7000EE3CA /* Assets.xcassets */,
+				7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */,
+				7647FD3024BF23C7000EE3CA /* Info.plist */,
+			);
+			path = RemoteLoggerApp;
+			sourceTree = "<group>";
+		};
+		7647FD3824BF23C7000EE3CA /* RemoteLoggerAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */,
+				7647FD3B24BF23C7000EE3CA /* Info.plist */,
+			);
+			path = RemoteLoggerAppTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7647FD3E24BF23C7000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerApp" */;
+			buildPhases = (
+				7647FD1B24BF23C6000EE3CA /* Sources */,
+				7647FD1C24BF23C6000EE3CA /* Frameworks */,
+				7647FD1D24BF23C6000EE3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoteLoggerApp;
+			productName = RemoteLoggerApp;
+			productReference = 7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7647FD3424BF23C7000EE3CA /* RemoteLoggerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7647FD4124BF23C7000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerAppTests" */;
+			buildPhases = (
+				7647FD3124BF23C7000EE3CA /* Sources */,
+				7647FD3224BF23C7000EE3CA /* Frameworks */,
+				7647FD3324BF23C7000EE3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7647FD3724BF23C7000EE3CA /* PBXTargetDependency */,
+			);
+			name = RemoteLoggerAppTests;
+			productName = RemoteLoggerAppTests;
+			productReference = 7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7647FD1724BF23C6000EE3CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = k2terada;
+				TargetAttributes = {
+					7647FD1E24BF23C6000EE3CA = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					7647FD3424BF23C7000EE3CA = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7647FD1E24BF23C6000EE3CA;
+					};
+				};
+			};
+			buildConfigurationList = 7647FD1A24BF23C6000EE3CA /* Build configuration list for PBXProject "RemoteLoggerApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7647FD1624BF23C6000EE3CA;
+			productRefGroup = 7647FD2024BF23C6000EE3CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */,
+				7647FD3424BF23C7000EE3CA /* RemoteLoggerAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7647FD1D24BF23C6000EE3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7647FD2F24BF23C7000EE3CA /* LaunchScreen.storyboard in Resources */,
+				7647FD2C24BF23C7000EE3CA /* Assets.xcassets in Resources */,
+				7647FD2A24BF23C6000EE3CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7647FD3324BF23C7000EE3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7647FD1B24BF23C6000EE3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7647FD2724BF23C6000EE3CA /* ViewController.swift in Sources */,
+				7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */,
+				7647FD2524BF23C6000EE3CA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7647FD3124BF23C7000EE3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7647FD3A24BF23C7000EE3CA /* RemoteLoggerAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7647FD3724BF23C7000EE3CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */;
+			targetProxy = 7647FD3624BF23C7000EE3CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7647FD2824BF23C6000EE3CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7647FD2924BF23C6000EE3CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7647FD2E24BF23C7000EE3CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7647FD3C24BF23C7000EE3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7647FD3D24BF23C7000EE3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7647FD3F24BF23C7000EE3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7647FD4024BF23C7000EE3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7647FD4224BF23C7000EE3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RemoteLoggerApp.app/RemoteLoggerApp";
+			};
+			name = Debug;
+		};
+		7647FD4324BF23C7000EE3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.RemoteLoggerAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RemoteLoggerApp.app/RemoteLoggerApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7647FD1A24BF23C6000EE3CA /* Build configuration list for PBXProject "RemoteLoggerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7647FD3C24BF23C7000EE3CA /* Debug */,
+				7647FD3D24BF23C7000EE3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7647FD3E24BF23C7000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7647FD3F24BF23C7000EE3CA /* Debug */,
+				7647FD4024BF23C7000EE3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7647FD4124BF23C7000EE3CA /* Build configuration list for PBXNativeTarget "RemoteLoggerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7647FD4224BF23C7000EE3CA /* Debug */,
+				7647FD4324BF23C7000EE3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7647FD1724BF23C6000EE3CA /* Project object */;
+}
