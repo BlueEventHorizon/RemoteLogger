@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  RemoteLoggerMonitor
 //
-//  Created by k_terada on 2020/07/15.
+//  Created by k2moons on 2020/07/15.
 //  Copyright © 2020 k2terada. All rights reserved.
 //
 
