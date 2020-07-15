@@ -41,12 +41,15 @@ public class NetworkBrowser {
             switch newState {
                 case .setup:
                     // coreLog.info("The browser has been initialized but not started.")
+                    break
 
                 case .ready:
                     // coreLog.info("The browser is registered for discovering services.")
+                    break
 
                 case .cancelled:
                     // coreLog.info("The browser has been canceled.")
+                    break
 
                 case let .failed(error):
                     // Restart the browser if it fails.

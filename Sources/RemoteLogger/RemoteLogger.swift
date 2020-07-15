@@ -11,7 +11,7 @@ import Logger
 
 public extension Logger {
     static func remoteLogger() -> Logger {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 13.0, *) {
             return Logger(RemoteLogger())
         }
         else {
@@ -21,18 +21,18 @@ public extension Logger {
 }
 
 @available(iOS 13.0, *)
-class RemoteLogger: LoggerDependency {
-    let manager = RemoteLoggerManager()
-    var enabled: Bool = false
+public class RemoteLogger: LoggerDependency {
+    private let manager = RemoteLoggerManager()
+    private var enabled: Bool = false
 
-    init() {
+    public init() {
         // coreLog.debug("(1) configuration", instance: self)
 
         manager.listener = self
         manager.browseAdvertiser()
     }
 
-    func preFix(_ level: Logger.Level) -> String {
+    public func preFix(_ level: Logger.Level) -> String {
         switch level {
             case .trace: return "===>"
             case .debug: return "[🟡 DEBG]"
@@ -44,11 +44,11 @@ class RemoteLogger: LoggerDependency {
         }
     }
 
-    func getTimeStampType(_ level: Logger.Level) -> Logger.TimeStampType {
+    public func getTimeStampType(_ level: Logger.Level) -> Logger.TimeStampType {
         .full
     }
 
-    func log(level: Logger.Level, message: String, formattedMessage: String) {
+    public func log(level: Logger.Level, message: String, formattedMessage: String) {
         print(formattedMessage)
         if enabled {
             manager.sendLog(formattedMessage)
@@ -58,7 +58,7 @@ class RemoteLogger: LoggerDependency {
 
 @available(iOS 13.0, *)
 extension RemoteLogger: RemoteLoggerBrowserDelegate {
-    func changed(advertisers: [AdvertiserInfo]) {
+    public func changed(advertisers: [AdvertiserInfo]) {
         guard !manager.isNetworkConnected else { return }
 
         // coreLog.debug("(2) Found Advertiser and select it", instance: self)
@@ -70,7 +70,7 @@ extension RemoteLogger: RemoteLoggerBrowserDelegate {
         manager.connectToAdvertiser(passcode: "PASSCODE")
     }
 
-    func ready() {
+    public func ready() {
         // coreLog.debug("(4) Connection Ready", instance: self)
 
         _ = manager.setReceiverToAdvertiser(self)
@@ -80,17 +80,17 @@ extension RemoteLogger: RemoteLoggerBrowserDelegate {
 
 @available(iOS 13.0, *)
 extension RemoteLogger: RemoteLoggerReceiveDelegate {
-    func ready(_ sender: RemoteLoggerManager) {}
+    public func ready(_ sender: RemoteLoggerManager) {}
 
-    func failed(_ sender: RemoteLoggerManager) {
+    public func failed(_ sender: RemoteLoggerManager) {
         //
     }
 
-    func received(_ sender: RemoteLoggerManager, log: String?) {
+    public func received(_ sender: RemoteLoggerManager, log: String?) {
         print("🍎 \(log ?? "")")
     }
 
-    func received(_ sender: RemoteLoggerManager, control: String?) {
+    public func received(_ sender: RemoteLoggerManager, control: String?) {
         print("🍏 \(control ?? "")")
     }
 }

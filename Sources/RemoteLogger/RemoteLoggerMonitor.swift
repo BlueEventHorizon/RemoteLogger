@@ -9,35 +9,35 @@
 import Foundation
 
 @available(iOS 13.0, *)
-class RemoteLoggerMonitor {
-    var monitor: RemoteLoggerManager?
+public class RemoteLoggerMonitor {
+    private var monitor: RemoteLoggerManager?
 
-    init() {
+    public init() {
         configure()
     }
 
-    func configure() {
+    private func configure() {
         monitor = RemoteLoggerManager()
     }
 
-    func strat() {
+    public func strat() {
         monitor?.startAdvertiser(advertisingName: "RemoteLoggerMonitor", passcode: "PASSCODE", receiver: self)
     }
 }
 
 @available(iOS 13.0, *)
 extension RemoteLoggerMonitor: RemoteLoggerReceiveDelegate {
-    func ready(_ sender: RemoteLoggerManager) {}
+    public func ready(_ sender: RemoteLoggerManager) {}
 
-    func failed(_ sender: RemoteLoggerManager) {
+    public func failed(_ sender: RemoteLoggerManager) {
         //
     }
 
-    func received(_ sender: RemoteLoggerManager, log: String?) {
+    public func received(_ sender: RemoteLoggerManager, log: String?) {
         print("🍎 \(log ?? "")")
     }
 
-    func received(_ sender: RemoteLoggerManager, control: String?) {
+    public func received(_ sender: RemoteLoggerManager, control: String?) {
         print("🍏 \(control ?? "")")
     }
 }

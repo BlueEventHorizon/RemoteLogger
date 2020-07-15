@@ -1,3 +1,4 @@
 # RemoteLogger
 
-A description of this package.
+## Logging tool to output another device through local network
+

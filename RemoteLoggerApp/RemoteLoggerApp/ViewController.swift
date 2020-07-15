@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Logger
+import RemoteLogger
+
+let log = Logger.remoteLogger()
 
 class ViewController: UIViewController {
 

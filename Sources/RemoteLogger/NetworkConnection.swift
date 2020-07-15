@@ -83,12 +83,15 @@ public class NetworkConnection {
             switch newState {
                 case .setup:
                     // coreLog.info("initial state")
+                    break
 
                 case let .waiting(error):
                     // coreLog.error("no destination \(error.localizedDescription)")
+                    break
 
                 case .preparing:
                     // coreLog.info("waiting connection")
+                    break
 
                 case .ready:
                     // coreLog.info("\(connection) established")

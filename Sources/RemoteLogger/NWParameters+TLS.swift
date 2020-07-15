@@ -14,7 +14,7 @@ import Network
 @available(iOS 13.0, *)
 extension NWParameters {
     // Create parameters for use in PeerConnection and PeerListener.
-    convenience init(preSharedCode code: String, passcode: String, definition: NWProtocolFramer.Definition) {
+    public convenience init(preSharedCode code: String, passcode: String, definition: NWProtocolFramer.Definition) {
         // coreLog.entered()
 
         // Create parameters with custom TLS and TCP options.

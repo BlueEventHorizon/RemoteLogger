@@ -70,6 +70,7 @@ public class NetworkAdvertiser {
                 switch newState {
                     case .ready:
                         // coreLog.info("Listener ready on \(String(describing: listener.port))")
+                        break
                     case let .failed(error):
                         // If the listener fails, re-start.
                         // coreLog.error("Listener failed with \(error), restarting")
@@ -78,6 +79,8 @@ public class NetworkAdvertiser {
 
                     case .setup:
                         // coreLog.info("Listener setup")
+                        break
+
                     case let .waiting(error):
                         // coreLog.error("Listener waiting with \(error)")
 
@@ -88,6 +91,7 @@ public class NetworkAdvertiser {
 
                     case .cancelled:
                         // coreLog.warning("Listener cancelled")
+                        break
                 }
             }
 

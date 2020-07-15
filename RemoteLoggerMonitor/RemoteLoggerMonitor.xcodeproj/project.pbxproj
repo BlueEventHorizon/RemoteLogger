@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		7647FCFE24BF239D000EE3CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7647FCFD24BF239D000EE3CA /* Assets.xcassets */; };
 		7647FD0124BF239D000EE3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FCFF24BF239D000EE3CA /* LaunchScreen.storyboard */; };
 		7647FD0C24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD0B24BF239D000EE3CA /* RemoteLoggerMonitorTests.swift */; };
+		7647FD6F24BF3032000EE3CA /* RemoteLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7647FD6E24BF3032000EE3CA /* RemoteLogger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7647FD6F24BF3032000EE3CA /* RemoteLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +117,9 @@
 			dependencies = (
 			);
 			name = RemoteLoggerMonitor;
+			packageProductDependencies = (
+				7647FD6E24BF3032000EE3CA /* RemoteLogger */,
+			);
 			productName = RemoteLoggerMonitor;
 			productReference = 7647FCF124BF239B000EE3CA /* RemoteLoggerMonitor.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 7647FCE824BF239B000EE3CA;
+			packageReferences = (
+				7647FD6D24BF3032000EE3CA /* XCRemoteSwiftPackageReference "RemoteLogger" */,
+			);
 			productRefGroup = 7647FCF224BF239B000EE3CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -471,6 +479,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7647FD6D24BF3032000EE3CA /* XCRemoteSwiftPackageReference "RemoteLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:BlueEventHorizon/RemoteLogger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7647FD6E24BF3032000EE3CA /* RemoteLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7647FD6D24BF3032000EE3CA /* XCRemoteSwiftPackageReference "RemoteLogger" */;
+			productName = RemoteLogger;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7647FCE924BF239B000EE3CA /* Project object */;
 }

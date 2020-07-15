@@ -170,7 +170,7 @@ extension RemoteLoggerManager {
 
 @available(iOS 13.0, *)
 extension RemoteLoggerManager: NetworkBrowserDelegate {
-    func changed(browser: NetworkBrowser, results: Set<NWBrowser.Result>) {
+    public func changed(browser: NetworkBrowser, results: Set<NWBrowser.Result>) {
         // coreLog.entered(self)
 
         var foundSelectedAdvertiser = false
@@ -209,7 +209,7 @@ extension RemoteLoggerManager: NetworkBrowserDelegate {
 // Listenerだけがconnected()を使います。
 @available(iOS 13.0, *)
 extension RemoteLoggerManager: NetworkAdvertiserDelegate {
-    func connected(_ connection: NetworkConnection) {
+    public func connected(_ connection: NetworkConnection) {
         // coreLog.entered(self)
 
         if receiver != nil {
@@ -226,7 +226,7 @@ extension RemoteLoggerManager: NetworkAdvertiserDelegate {
 @available(iOS 13.0, *)
 extension RemoteLoggerManager: NetworkConnectionDelegate {
     // When a connection becomes ready, move into NetworkedLogger mode.
-    func ready(connection: NetworkConnection) {
+    public func ready(connection: NetworkConnection) {
         // coreLog.entered(self)
 
         if let receiver = receiver {
@@ -239,7 +239,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
     }
 
     // Ignore connection failures and messages prior to starting a NetworkedLogger.
-    func failed(connection: NetworkConnection) {
+    public func failed(connection: NetworkConnection) {
         // coreLog.entered(self)
 
         self.networkConnection = nil
@@ -250,7 +250,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
         }
     }
 
-    func canceled(connection: NetworkConnection) {
+    public func canceled(connection: NetworkConnection) {
         // coreLog.entered(self)
 
         self.networkConnection = nil
@@ -261,7 +261,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
         }
     }
 
-    func received(connection: NetworkConnection, content: Data?, message: NWProtocolFramer.Message) {
+    public func received(connection: NetworkConnection, content: Data?, message: NWProtocolFramer.Message) {
         // coreLog.entered(self)
 
         if let receiver = receiver {
