@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Logger
+import RemoteLogger
 
 public extension Logger {
     static func remoteLogger() -> Logger {
@@ -21,14 +23,13 @@ public extension Logger {
 
 @available(iOS 13.0, *)
 public class RemoteLogger: LoggerDependency {
-    private let manager = RemoteLoggerManager()
+    private let manager = RemoteLoggerManager.shared
     private var enabled: Bool = false
 
     public init() {
         // netlog.debug("(1) configuration", instance: self)
 
-        manager.listener = self
-        manager.browseAdvertiser()
+        manager.browseAdvertiser(listener: self)
     }
 
     public func preFix(_ level: Logger.Level) -> String {

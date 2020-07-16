@@ -32,12 +32,13 @@ public protocol RemoteLoggerBrowserDelegate: AnyObject {
 @available(iOS 13.0, *)
 public class RemoteLoggerManager {
     public static let shared = RemoteLoggerManager()
+    public init() {} // No need to be a singleton
 
     private var networkBrowser: NetworkBrowser?
     private var networkAdvertiser: NetworkAdvertiser?
     private(set) var networkConnection: NetworkConnection?
 
-    weak var listener: RemoteLoggerBrowserDelegate?
+    private weak var listener: RemoteLoggerBrowserDelegate?
     private weak var receiver: RemoteLoggerReceiveDelegate?
 
     // Which advertiser to be connected is selected by upper layer module.
@@ -105,8 +106,10 @@ extension RemoteLoggerManager {
 
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
-    public func browseAdvertiser() {
+    public func browseAdvertiser(listener: RemoteLoggerBrowserDelegate) {
         // netlog.entered(self)
+
+        self.listener = listener
 
         networkBrowser = NetworkBrowser()
             .start(

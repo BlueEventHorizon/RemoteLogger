@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RemoteLogger
 
 @available(iOS 13.0, *)
 public class RemoteLoggerMonitor {
@@ -17,7 +18,7 @@ public class RemoteLoggerMonitor {
     }
 
     private func configure() {
-        monitor = RemoteLoggerManager()
+        monitor = RemoteLoggerManager.shared
     }
 
     public func strat() {
