@@ -24,7 +24,6 @@ public extension Logger {
 @available(iOS 13.0, *)
 public class RemoteLogger: LoggerDependency {
     private let manager = RemoteLoggerManager.shared
-    private var enabled: Bool = false
 
     public init() {
         // netlog.debug("(1) configuration", instance: self)
@@ -50,9 +49,7 @@ public class RemoteLogger: LoggerDependency {
 
     public func log(level: Logger.Level, message: String, formattedMessage: String) {
         print(formattedMessage)
-        if enabled {
-            manager.sendLog(formattedMessage)
-        }
+        manager.sendLog(formattedMessage)
     }
 }
 
@@ -74,7 +71,6 @@ extension RemoteLogger: RemoteLoggerBrowserDelegate {
         // netlog.debug("(4) Connection Ready", instance: self)
 
         _ = manager.setReceiverToAdvertiser(self)
-        enabled = true
     }
 }
 
