@@ -16,6 +16,7 @@
 		7647FD2F24BF23C7000EE3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */; };
 		7647FD3A24BF23C7000EE3CA /* RemoteLoggerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */; };
 		7647FD6C24BF301F000EE3CA /* RemoteLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7647FD6B24BF301F000EE3CA /* RemoteLogger */; };
+		76624E9624C0498A00137BFE /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 76624E9524C0498A00137BFE /* Logger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76624E9624C0498A00137BFE /* Logger in Frameworks */,
 				7647FD6C24BF301F000EE3CA /* RemoteLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +124,7 @@
 			name = RemoteLoggerApp;
 			packageProductDependencies = (
 				7647FD6B24BF301F000EE3CA /* RemoteLogger */,
+				76624E9524C0498A00137BFE /* Logger */,
 			);
 			productName = RemoteLoggerApp;
 			productReference = 7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */;
@@ -175,6 +178,7 @@
 			mainGroup = 7647FD1624BF23C6000EE3CA;
 			packageReferences = (
 				7647FD6A24BF301F000EE3CA /* XCRemoteSwiftPackageReference "RemoteLogger" */,
+				76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */,
 			);
 			productRefGroup = 7647FD2024BF23C6000EE3CA /* Products */;
 			projectDirPath = "";
@@ -493,6 +497,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:BlueEventHorizon/Logger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -500,6 +512,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7647FD6A24BF301F000EE3CA /* XCRemoteSwiftPackageReference "RemoteLogger" */;
 			productName = RemoteLogger;
+		};
+		76624E9524C0498A00137BFE /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */;
+			productName = Logger;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
