@@ -1,6 +1,6 @@
 # RemoteLogger
 
-RemoteLogger is the logging tool for output log to the another device through local network
+**RemoteLogger is the logging tool for output log to the another device through local network**
 
 
 
@@ -29,6 +29,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Usage
 
 Usage is just simple.
+
+
 
 App 
 

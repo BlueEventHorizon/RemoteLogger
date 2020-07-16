@@ -2,7 +2,7 @@
  See LICENSE folder for this sample’s licensing information.
 
  Abstract:
- Network Connection
+ Implement Network Connection
  */
 
 // https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol
@@ -34,7 +34,7 @@ public class NetworkConnection {
         definition: NWProtocolFramer.Definition,
         connector: NetworkConnectionDelegate
     ) {
-        // coreLog.entered()
+        // netlog.entered()
 
         let connection = NWConnection(to: endpoint, using: NWParameters(preSharedCode: preSharedCode, passcode: passcode, definition: definition))
         self.connection = connection
@@ -52,7 +52,7 @@ public class NetworkConnection {
         definition: NWProtocolFramer.Definition,
         connector: NetworkConnectionDelegate
     ) {
-        // coreLog.entered()
+        // netlog.entered()
 
         self.connection = connection
         self.definition = definition
@@ -63,9 +63,9 @@ public class NetworkConnection {
         start()
     }
 
-    // Handle the user exiting the NetworkedLogger.
+    // Handle the user exiting the NetworkConnection.
     public func cancel() {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         if let connection = self.connection {
             connection.cancel()
@@ -75,26 +75,26 @@ public class NetworkConnection {
 
     // Handle starting the peer-to-peer connection for both inbound and outbound connections.
     private func start() {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         guard let connection = connection else { return }
 
         connection.stateUpdateHandler = { newState in
             switch newState {
                 case .setup:
-                    // coreLog.info("initial state")
+                    // netlog.info("initial state")
                     break
 
                 case let .waiting(error):
-                    // coreLog.error("no destination \(error.localizedDescription)")
+                    // netlog.error("no destination \(error.localizedDescription)")
                     break
 
                 case .preparing:
-                    // coreLog.info("waiting connection")
+                    // netlog.info("waiting connection")
                     break
 
                 case .ready:
-                    // coreLog.info("\(connection) established")
+                    // netlog.info("\(connection) established")
 
                     // When the connection is ready, start receiving messages.
                     self.receive()
@@ -102,7 +102,7 @@ public class NetworkConnection {
                     self.connector?.ready(connection: self)
 
                 case let .failed(error):
-                    // coreLog.error("\(connection) failed with \(error.localizedDescription)")
+                    // netlog.error("\(connection) failed with \(error.localizedDescription)")
 
                     // Cancel the connection upon a failure.
                     connection.cancel()
@@ -110,7 +110,7 @@ public class NetworkConnection {
                     self.connector?.failed(connection: self)
 
                 case .cancelled:
-                    // coreLog.info("cancelled")
+                    // netlog.info("cancelled")
 
                     connection.cancel()
 
@@ -124,7 +124,7 @@ public class NetworkConnection {
 
     // Receive a message, deliver it to your connector, and continue receiving more messages.
     public func receive() {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         guard let connection = connection else { return }
 
@@ -146,7 +146,7 @@ public class NetworkConnection {
     }
 
     public func send(_ dataString: String, identifier: String, messages: [NWProtocolFramer.Message]) {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         guard let connection = connection else { return }
 

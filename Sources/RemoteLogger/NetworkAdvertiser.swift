@@ -2,7 +2,7 @@
  See LICENSE folder for this sample’s licensing information.
 
  Abstract:
- Network Advertiser
+ Implement Network Advertiser
  */
 
 // https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol
@@ -45,7 +45,7 @@ public class NetworkAdvertiser {
         advertiser: NetworkAdvertiserDelegate?,
         connector: NetworkConnectionDelegate?
     ) -> Self {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         self.type = type
         self.name = name
@@ -69,20 +69,19 @@ public class NetworkAdvertiser {
             listener.stateUpdateHandler = { newState in
                 switch newState {
                     case .ready:
-                        // coreLog.info("Listener ready on \(String(describing: listener.port))")
+                        // netlog.info("Listener ready on \(String(describing: listener.port))")
                         break
                     case let .failed(error):
                         // If the listener fails, re-start.
-                        // coreLog.error("Listener failed with \(error), restarting")
+                        // netlog.error("Listener failed with \(error), restarting")
                         listener.cancel()
                         self.start(type: self.type, advertisingName: name, preSharedCode: preSharedCode, passcode: self.passcode, definition: definition, advertiser: self.advertiser, connector: self.connector)
 
                     case .setup:
-                        // coreLog.info("Listener setup")
+                        // netlog.info("Listener setup")
                         break
-
                     case let .waiting(error):
-                        // coreLog.error("Listener waiting with \(error)")
+                        // netlog.error("Listener waiting with \(error)")
 
                         guard let networkConnection = self.networkConnection else { return }
 
@@ -90,7 +89,7 @@ public class NetworkAdvertiser {
                         self.networkConnection = nil
 
                     case .cancelled:
-                        // coreLog.warning("Listener cancelled")
+                        // netlog.warning("Listener cancelled")
                         break
                 }
             }
@@ -109,7 +108,7 @@ public class NetworkAdvertiser {
                     }
                 }
                 else {
-                    // If a NetworkedLogger is already in progress, reject it.
+                    // If a NetworkConnection is already in progress, reject it.
                     newConnection.cancel()
                 }
             }
@@ -118,7 +117,7 @@ public class NetworkAdvertiser {
             listener.start(queue: .main)
         }
         catch {
-            // coreLog.error("Failed to create listener")
+            // netlog.error("Failed to create listener")
             abort()
         }
 
@@ -127,7 +126,7 @@ public class NetworkAdvertiser {
 
     // If the user changes their name, update the advertised name.
     public func change(advertisingName: String) {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         self.name = advertisingName
         if let listener = listener {

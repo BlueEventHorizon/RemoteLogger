@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76258D0724C03CE900B090E5 /* RemoteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76258D0624C03CE900B090E5 /* RemoteLogger.swift */; };
 		7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2224BF23C6000EE3CA /* AppDelegate.swift */; };
 		7647FD2524BF23C6000EE3CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2424BF23C6000EE3CA /* SceneDelegate.swift */; };
 		7647FD2724BF23C6000EE3CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2624BF23C6000EE3CA /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76258D0624C03CE900B090E5 /* RemoteLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLogger.swift; sourceTree = "<group>"; };
 		7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteLoggerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7647FD2224BF23C6000EE3CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7647FD2424BF23C6000EE3CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				7647FD2424BF23C6000EE3CA /* SceneDelegate.swift */,
 				7647FD2624BF23C6000EE3CA /* ViewController.swift */,
 				7647FD2824BF23C6000EE3CA /* Main.storyboard */,
+				76258D0624C03CE900B090E5 /* RemoteLogger.swift */,
 				7647FD2B24BF23C7000EE3CA /* Assets.xcassets */,
 				7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */,
 				7647FD3024BF23C7000EE3CA /* Info.plist */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7647FD2724BF23C6000EE3CA /* ViewController.swift in Sources */,
+				76258D0724C03CE900B090E5 /* RemoteLogger.swift in Sources */,
 				7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */,
 				7647FD2524BF23C6000EE3CA /* SceneDelegate.swift in Sources */,
 			);

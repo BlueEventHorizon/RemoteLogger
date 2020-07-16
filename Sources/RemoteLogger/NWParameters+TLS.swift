@@ -2,7 +2,7 @@
  See LICENSE folder for this sample’s licensing information.
 
  Abstract:
- NWParameters extension
+ NWParameters extention
  */
 
 // https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol
@@ -14,8 +14,8 @@ import Network
 @available(iOS 13.0, *)
 extension NWParameters {
     // Create parameters for use in PeerConnection and PeerListener.
-    public convenience init(preSharedCode code: String, passcode: String, definition: NWProtocolFramer.Definition) {
-        // coreLog.entered()
+    convenience init(preSharedCode code: String, passcode: String, definition: NWProtocolFramer.Definition) {
+        // netlog.entered()
 
         // Create parameters with custom TLS and TCP options.
         self.init(tls: NWParameters.tlsOptions(code: code, passcode: passcode), tcp: NWParameters.tcpOption())
@@ -23,14 +23,14 @@ extension NWParameters {
         // Enable using a peer-to-peer link.
         self.includePeerToPeer = true
 
-        // Add your custom NetworkedLogger protocol to support NetworkedLogger messages.
+        // Add your custom NetworkConnection protocol to support NetworkConnection messages.
         let options = NWProtocolFramer.Options(definition: definition)
         self.defaultProtocolStack.applicationProtocols.insert(options, at: 0)
     }
 
     // Customize TCP options to enable keepalives.
     private static func tcpOption() -> NWProtocolTCP.Options {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         let tcpOptions = NWProtocolTCP.Options()
 
@@ -42,7 +42,7 @@ extension NWParameters {
 
     // Create TLS options using a passcode to derive a pre-shared key.
     private static func tlsOptions(code: String, passcode: String) -> NWProtocolTLS.Options {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         let tlsOptions = NWProtocolTLS.Options()
 
@@ -70,7 +70,7 @@ extension NWParameters {
 
     // Create a utility function to encode strings as pre-shared key data.
     private static func stringToDispatchData(_ string: String) -> DispatchData? {
-        // coreLog.entered(self)
+        // netlog.entered(self)
 
         guard let stringData = string.data(using: .unicode) else {
             return nil
