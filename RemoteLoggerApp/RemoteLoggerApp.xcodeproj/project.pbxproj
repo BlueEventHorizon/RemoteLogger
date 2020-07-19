@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76046B6324C48EA4005D8D03 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76046B6224C48EA4005D8D03 /* KeyboardManager.swift */; };
+		76046B6724C48EEA005D8D03 /* UIView+Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76046B6624C48EEA005D8D03 /* UIView+Responder.swift */; };
+		76046B6924C48F38005D8D03 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76046B6824C48F38005D8D03 /* Const.swift */; };
+		76046B6C24C48F89005D8D03 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76046B6B24C48F89005D8D03 /* UIView+Ext.swift */; };
 		760F83B424C1FF8C000C46B3 /* PPublisher in Frameworks */ = {isa = PBXBuildFile; productRef = 760F83B324C1FF8C000C46B3 /* PPublisher */; };
 		76258D0724C03CE900B090E5 /* RemoteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76258D0624C03CE900B090E5 /* RemoteLogger.swift */; };
 		7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD2224BF23C6000EE3CA /* AppDelegate.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76046B6224C48EA4005D8D03 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		76046B6624C48EEA005D8D03 /* UIView+Responder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Responder.swift"; sourceTree = "<group>"; };
+		76046B6824C48F38005D8D03 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		76046B6B24C48F89005D8D03 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		76258D0624C03CE900B090E5 /* RemoteLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLogger.swift; sourceTree = "<group>"; };
 		7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteLoggerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7647FD2224BF23C6000EE3CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76046B6A24C48F3E005D8D03 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				76046B6224C48EA4005D8D03 /* KeyboardManager.swift */,
+				76046B6624C48EEA005D8D03 /* UIView+Responder.swift */,
+				76046B6B24C48F89005D8D03 /* UIView+Ext.swift */,
+				76046B6824C48F38005D8D03 /* Const.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		7647FD1624BF23C6000EE3CA = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +111,7 @@
 				7647FD2624BF23C6000EE3CA /* ViewController.swift */,
 				7647FD2824BF23C6000EE3CA /* Main.storyboard */,
 				76258D0624C03CE900B090E5 /* RemoteLogger.swift */,
+				76046B6A24C48F3E005D8D03 /* Tools */,
 				7647FD2B24BF23C7000EE3CA /* Assets.xcassets */,
 				7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */,
 				7647FD3024BF23C7000EE3CA /* Info.plist */,
@@ -221,7 +241,11 @@
 			files = (
 				7647FD2724BF23C6000EE3CA /* ViewController.swift in Sources */,
 				76258D0724C03CE900B090E5 /* RemoteLogger.swift in Sources */,
+				76046B6324C48EA4005D8D03 /* KeyboardManager.swift in Sources */,
 				7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */,
+				76046B6C24C48F89005D8D03 /* UIView+Ext.swift in Sources */,
+				76046B6924C48F38005D8D03 /* Const.swift in Sources */,
+				76046B6724C48EEA005D8D03 /* UIView+Responder.swift in Sources */,
 				7647FD2524BF23C6000EE3CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

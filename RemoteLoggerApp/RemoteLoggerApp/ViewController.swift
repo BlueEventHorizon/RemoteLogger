@@ -15,8 +15,12 @@ let log = Logger.remoteLogger()
 
 class ViewController: UIViewController {
 
-    var checkButtonType: CheckButtonType?
-    var bag = SubscriptionBag()
+    private var checkButtonType: CheckButtonType?
+    private var bag = SubscriptionBag()
+    private var keyboardManager = KeyboardManager.shared
+    @IBOutlet weak var top: NSLayoutConstraint!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
+    @IBOutlet weak var targetViewToScroll: UIView!
 
     @IBOutlet weak var monitorNameLabel: UILabel!
     @IBOutlet weak var logMessageTextField: UITextField!
@@ -74,6 +78,20 @@ class ViewController: UIViewController {
         .unsubscribed(by: bag)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        keyboardManager.setAction(owner: self, baseView: self.view, targetViewToScroll: self.targetViewToScroll, topConstraint: top, bottomConstraint: bottom)
+        logMessageTextField.returnKeyType = .done
+        logMessageTextField.delegate = self
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        keyboardManager.removeAction()
+    }
+
     private func updateCheckBox(index: Int) {
         for button in checkButton.enumerated() {
             let on = (index == button.offset)
@@ -87,3 +105,12 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        textField.resignFirstResponder()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
