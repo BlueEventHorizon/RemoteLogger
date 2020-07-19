@@ -9,23 +9,27 @@
 import Foundation
 import Logger
 import RemoteLogger
+import PPublisher
 
-public extension Logger {
-    static func remoteLogger() -> Logger {
-        if #available(iOS 13.0, *) {
-            return Logger(RemoteLogger())
-        }
-        else {
-            return Logger()
-        }
+extension Logger {
+    public static func remoteLogger() -> Logger {
+        return Logger(RemoteLogger.shared)
+    }
+
+    public var monitorNamePublisher: Publisher<String> {
+        RemoteLogger.shared.monitorNamePublisher
     }
 }
 
-@available(iOS 13.0, *)
 public class RemoteLogger: LoggerDependency {
+
+    static let shared = RemoteLogger()
+
+    var monitorNamePublisher = Publisher<String>()
+
     private let manager = RemoteLoggerManager.shared
 
-    public init() {
+    private init() {
         // netlog.debug("(1) configuration", instance: self)
 
         manager.browseAdvertiser(listener: self)
@@ -56,15 +60,24 @@ public class RemoteLogger: LoggerDependency {
 @available(iOS 13.0, *)
 extension RemoteLogger: RemoteLoggerBrowserDelegate {
     public func changed(advertisers: [AdvertiserInfo]) {
-        guard !manager.isNetworkConnected else { return }
+        guard !manager.isNetworkConnected else {
+            monitorNamePublisher.publish("Not Connected")
+            return
+        }
 
         // netlog.debug("(2) Found Advertiser and select it", instance: self)
 
-        manager.selectedAdvertiser = advertisers.first
+        if let advertiser = advertisers.first {
+            manager.selectedAdvertiser = advertiser
+            monitorNamePublisher.publish(advertiser.name)
 
-        // netlog.debug("(3) Start to connect with passcode", instance: self)
+            // netlog.debug("(3) Start to connect with passcode", instance: self)
 
-        manager.connectToAdvertiser(passcode: "PASSCODE")
+            manager.connectToAdvertiser(passcode: "PASSCODE")
+        }
+        else {
+            monitorNamePublisher.publish("Not Connected")
+        }
     }
 
     public func ready() {
@@ -81,10 +94,10 @@ extension RemoteLogger: RemoteLoggerReceiveDelegate {
     public func failed(_ sender: RemoteLoggerManager) {}
 
     public func received(_ sender: RemoteLoggerManager, log: String?) {
-        print("🍎 \(log ?? "")")
+        //
     }
 
     public func received(_ sender: RemoteLoggerManager, control: String?) {
-        print("🍏 \(control ?? "")")
+        //
     }
 }

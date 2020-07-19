@@ -26,10 +26,23 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EWH-sS-PVb">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="374" height="41"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMM-sh-IJJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt8-Ab-kZ0">
+                                                <rect key="frame" x="0.0" y="14.5" width="374" height="6"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="6" id="mj8-mz-av2"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Connected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjL-8K-wTH">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -37,28 +50,100 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLH-fE-8ev">
-                                        <rect key="frame" x="0.0" y="70.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="91" width="374" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kir-QU-Nts"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeM-dS-RCD">
-                                        <rect key="frame" x="0.0" y="110.5" width="374" height="1"/>
+                                        <rect key="frame" x="0.0" y="131" width="374" height="1"/>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="rU1-6p-dLL"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BS-RC-9ut">
-                                        <rect key="frame" x="0.0" y="111.5" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="132" width="374" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UmN-fb-UUM"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wGk-vn-Btc">
+                                        <rect key="frame" x="0.0" y="162" width="374" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXj-6G-VoJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Sxn-Av-NwM"/>
+                                                </constraints>
+                                                <state key="normal" title=" Debug" image="checkmark.square.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EmJ-U4-cpQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-ld-l8w">
+                                                <rect key="frame" x="0.0" y="40" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="qYj-d3-hCZ"/>
+                                                </constraints>
+                                                <state key="normal" title=" Info" image="checkmark.square.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkJ-RI-jE3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-bs-Xob">
+                                                <rect key="frame" x="0.0" y="80" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="dmA-TS-See"/>
+                                                </constraints>
+                                                <state key="normal" title=" Notice" image="checkmark.square.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1qP-Qe-wp3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsG-a1-iBL">
+                                                <rect key="frame" x="0.0" y="120" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="cOh-vc-AiO"/>
+                                                </constraints>
+                                                <state key="normal" title=" Warning" image="checkmark.square.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P5k-lD-LfN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHA-Gs-zlF">
+                                                <rect key="frame" x="0.0" y="160" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="c0g-ZI-foG"/>
+                                                </constraints>
+                                                <state key="normal" title=" Error" image="checkmark.square.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Twv-pW-9fD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2H0-sB-V0p">
+                                        <rect key="frame" x="0.0" y="362" width="374" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="MGl-mj-Y6s"/>
+                                        </constraints>
+                                    </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter log message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-XH-LW2">
-                                        <rect key="frame" x="0.0" y="141.5" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="382" width="374" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cBQ-au-gx8"/>
                                         </constraints>
@@ -66,25 +151,28 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1f-Fm-XuD">
-                                        <rect key="frame" x="0.0" y="191.5" width="374" height="20"/>
+                                        <rect key="frame" x="0.0" y="432" width="374" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="sfE-7F-ucE"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUh-TE-Vl8">
-                                        <rect key="frame" x="0.0" y="211.5" width="374" height="45"/>
+                                        <rect key="frame" x="0.0" y="452" width="374" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="UlR-rP-xyH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="Log" image="arrow.up.circle.fill" catalog="system">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="senfLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Av1-V5-lbr"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhB-6s-CjK">
-                                        <rect key="frame" x="0.0" y="256.5" width="374" height="561.5"/>
+                                        <rect key="frame" x="0.0" y="497" width="374" height="321"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -99,6 +187,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="logMessageTextField" destination="rpv-XH-LW2" id="qTC-OE-pRi"/>
+                        <outlet property="monitorNameLabel" destination="YjL-8K-wTH" id="ZoA-7e-95i"/>
+                        <outletCollection property="checkButton" destination="bXj-6G-VoJ" collectionClass="NSMutableArray" id="egx-9g-aDU"/>
+                        <outletCollection property="checkButton" destination="vCN-ld-l8w" collectionClass="NSMutableArray" id="G8w-qn-yvu"/>
+                        <outletCollection property="checkButton" destination="jJZ-bs-Xob" collectionClass="NSMutableArray" id="xjj-HR-Cvz"/>
+                        <outletCollection property="checkButton" destination="tsG-a1-iBL" collectionClass="NSMutableArray" id="r1E-nB-Kti"/>
+                        <outletCollection property="checkButton" destination="OHA-Gs-zlF" collectionClass="NSMutableArray" id="nug-00-xGS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,5 +204,6 @@
     </scenes>
     <resources>
         <image name="arrow.up.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

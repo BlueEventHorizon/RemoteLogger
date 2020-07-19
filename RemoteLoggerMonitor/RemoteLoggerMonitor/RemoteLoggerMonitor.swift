@@ -22,7 +22,7 @@ public class RemoteLoggerMonitor {
     }
 
     public func strat() {
-        monitor?.startAdvertiser(advertisingName: UUID().uuidString, passcode: "PASSCODE", receiver: self)
+        monitor?.startAdvertiser(advertisingName: "RemoteLoggerMonitor", passcode: "PASSCODE", receiver: self)
     }
 }
 
