@@ -10,9 +10,9 @@ import Foundation
 import Network
 
 public struct AdvertiserInfo {
-    let name: String
-    let type: String?
-    let domain: String?
+    public let name: String
+    public let type: String?
+    public let domain: String?
     let hashValueRef: Int
 }
 
