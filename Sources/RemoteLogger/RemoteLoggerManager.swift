@@ -115,7 +115,7 @@ extension RemoteLoggerManager {
             .start(
                 type: advertiserType,
                 delegate: self // NetworkBrowserDelegate
-            )
+        )
     }
 
     public func connectToAdvertiser(passcode: String) {
@@ -310,3 +310,4 @@ extension RemoteLoggerManager {
         networkConnection?.sendControl(control)
     }
 }
+

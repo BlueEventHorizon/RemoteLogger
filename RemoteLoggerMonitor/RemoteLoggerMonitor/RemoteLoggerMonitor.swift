@@ -7,8 +7,10 @@
 //
 
 import Foundation
+
+#if canImport(PPublisher)
 import PPublisher
-import RemoteLogger
+#endif
 
 @available(iOS 13.0, *)
 public class RemoteLoggerMonitor {
@@ -48,3 +50,4 @@ extension RemoteLoggerMonitor: RemoteLoggerReceiveDelegate {
         print("🍏 \(control)")
     }
 }
+

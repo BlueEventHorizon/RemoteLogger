@@ -8,7 +8,7 @@
 
 import Logger
 import PPublisher
-import RemoteLogger
+// import RemoteLogger
 import UIKit
 
 class ViewController: UIViewController {

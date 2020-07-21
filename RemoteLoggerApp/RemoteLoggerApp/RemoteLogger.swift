@@ -7,20 +7,36 @@
 //
 
 import Foundation
-import Logger
-import PPublisher
-import RemoteLogger
+
+#if canImport(Logger)
+    import Logger
+#endif
+
+#if canImport(PPublisher)
+    import PPublisher
+#endif
+
+#if canImport(RemoteLogger)
+    import RemoteLogger
+#endif
 
 extension Logger {
     public static func remoteLogger() -> Logger {
-        return Logger(RemoteLogger.shared)
+        if #available(iOS 13.0, *) {
+            return Logger(RemoteLogger.shared)
+        }
+        else {
+            return Logger()
+        }
     }
 
+    @available(iOS 13.0, *)
     public var monitorNamePublisher: Publisher<String> {
         RemoteLogger.shared.monitorNamePublisher
     }
 }
 
+@available(iOS 13.0, *)
 public class RemoteLogger: LoggerDependency {
     static let shared = RemoteLogger()
 

@@ -104,6 +104,8 @@ public class NetworkAdvertiser {
                         let connection = NetworkConnection(connection: newConnection, definition: definition, connector: connector)
                         self.networkConnection = connection
 
+                        print(newConnection.endpoint.debugDescription)
+
                         advertiser.connected(connection)
                     }
                 }
@@ -135,3 +137,4 @@ public class NetworkAdvertiser {
         }
     }
 }
+
