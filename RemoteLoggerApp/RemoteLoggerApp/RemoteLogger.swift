@@ -8,8 +8,8 @@
 
 import Foundation
 import Logger
-import RemoteLogger
 import PPublisher
+import RemoteLogger
 
 extension Logger {
     public static func remoteLogger() -> Logger {
@@ -22,7 +22,6 @@ extension Logger {
 }
 
 public class RemoteLogger: LoggerDependency {
-
     static let shared = RemoteLogger()
 
     var monitorNamePublisher = Publisher<String>()

@@ -6,13 +6,12 @@
 //  Copyright © 2020 k2terada. All rights reserved.
 //
 
-import UIKit
 import Logger
-import RemoteLogger
 import PPublisher
+import RemoteLogger
+import UIKit
 
 class ViewController: UIViewController {
-
     let monitor = RemoteLoggerMonitor()
 //    var flowLayout: UICollectionViewFlowLayout!
 //    var collectionView: UICollectionView!
@@ -30,44 +29,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         textView.isEditable = false
 
-        monitor.receivedLog.subscribe(self, latest: false, main: true) { (log) in
+        monitor.receivedLog.subscribe(self, latest: false, main: true) { log in
             self.logall = self.logall + log + "\n"
             self.textView.text = self.logall
         }
-        
+
         monitor.strat()
     }
 }
 
-//extension ViewController {
+// extension ViewController {
 
-    //func configure() {
-        //        flowLayout = ColumnFlowLayout()
-        //        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
-        //        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //        collectionView.backgroundColor = UIColor.systemBackground
-        //        collectionView.alwaysBounceVertical = true
-        //        view.addSubview(collectionView)
-        //
-        //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
-        //
-        //        collectionView.dataSource = self
-        //        collectionView.delegate = self
-    //}
-//}
+// func configure() {
+//        flowLayout = ColumnFlowLayout()
+//        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+//        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        collectionView.backgroundColor = UIColor.systemBackground
+//        collectionView.alwaysBounceVertical = true
+//        view.addSubview(collectionView)
+//
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+//
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
+// }
+// }
 
-//extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
-    //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //        <#code#>
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //        <#code#>
-    //    }
-//}
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+// }
 
 //
-//class ColumnFlowLayout: UICollectionViewFlowLayout {
+// class ColumnFlowLayout: UICollectionViewFlowLayout {
 //
-//}
+// }

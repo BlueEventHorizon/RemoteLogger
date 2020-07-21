@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import RemoteLogger
 import PPublisher
+import RemoteLogger
 
 @available(iOS 13.0, *)
 public class RemoteLoggerMonitor {
-
     private var monitor: RemoteLoggerManager?
 
     var receivedLog = Publisher<String>()

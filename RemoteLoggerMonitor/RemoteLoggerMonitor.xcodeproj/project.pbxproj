@@ -116,6 +116,7 @@
 				7647FCED24BF239B000EE3CA /* Sources */,
 				7647FCEE24BF239B000EE3CA /* Frameworks */,
 				7647FCEF24BF239B000EE3CA /* Resources */,
+				76CF87F824C6C0130008B31A /* Swiftformat Script */,
 			);
 			buildRules = (
 			);
@@ -209,6 +210,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76CF87F824C6C0130008B31A /* Swiftformat Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swiftformat Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat --exclude Carthage,Pods --stripunusedargs closure-only --indentcase true --elseposition next-line --comments ignore --disable strongOutlets,trailingCommas,redundantSelf ${SRCROOT}\nelse\n  echo \"swiftformat does not exist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7647FCED24BF239B000EE3CA /* Sources */ = {

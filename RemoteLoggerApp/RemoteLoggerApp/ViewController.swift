@@ -6,15 +6,14 @@
 //  Copyright © 2020 k2terada. All rights reserved.
 //
 
-import UIKit
 import Logger
-import RemoteLogger
 import PPublisher
+import RemoteLogger
+import UIKit
 
 let log = Logger.remoteLogger()
 
 class ViewController: UIViewController {
-
     private var checkButtonType: CheckButtonType?
     private var bag = SubscriptionBag()
     private var keyboardManager = KeyboardManager.shared
@@ -26,7 +25,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var logMessageTextField: UITextField!
 
     @IBOutlet weak var logLebelSelectorStack: UIStackView!
-
 
     @IBAction func sendLog(_ sender: Any) {
         sendLog()
@@ -64,7 +62,7 @@ class ViewController: UIViewController {
 
         updateCheckBox(index: 0)
 
-        log.monitorNamePublisher.subscribe(self) { [weak self] (name) in
+        log.monitorNamePublisher.subscribe(self) { [weak self] name in
             self?.monitorNameLabel.text = name
         }
         .unsubscribed(by: bag)
@@ -120,6 +118,7 @@ extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.resignFirstResponder()
     }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

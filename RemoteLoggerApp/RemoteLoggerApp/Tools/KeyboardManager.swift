@@ -449,4 +449,3 @@ extension KeyboardManager {
         textOfFirstResponder = nil
     }
 }
-
