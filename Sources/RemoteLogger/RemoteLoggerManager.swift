@@ -1,6 +1,6 @@
 //
 //  RemoteLoggerManager.swift
-//  RemoteLoggerManager
+//  BwTools
 //
 //  Created by k_terada on 2020/06/21.
 //  Copyright © 2020 Apple. All rights reserved.
@@ -39,8 +39,8 @@ public class RemoteLoggerManager {
     private var networkAdvertiser: NetworkAdvertiser?
     private(set) var networkConnection: NetworkConnection?
 
-    private weak var listener: RemoteLoggerBrowserDelegate?
-    private weak var receiver: RemoteLoggerReceiveDelegate?
+    private weak var browserDelegate: RemoteLoggerBrowserDelegate?
+    private weak var receiveDelegate: RemoteLoggerReceiveDelegate?
 
     private var results: [NWBrowser.Result] = [NWBrowser.Result]()
     private(set) var advertisers = [AdvertiserInfo]()
@@ -78,18 +78,18 @@ public class RemoteLoggerManager {
 
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
-    public func startAdvertiser(advertisingName name: String, passcode: String, receiver: RemoteLoggerReceiveDelegate) {
+    public func startAdvertiser(advertisingName name: String, passcode: String, receiveDelegate: RemoteLoggerReceiveDelegate) {
         // netlog.entered(self)
 
         advertisingName = name
-        self.receiver = receiver
+        self.receiveDelegate = receiveDelegate
 
-        if let listener = networkAdvertiser {
+        if let browserDelegate = networkAdvertiser {
             // If your app is already listening, just update the name.
-            listener.change(advertisingName: advertisingName)
+            browserDelegate.change(advertisingName: advertisingName)
         }
         else {
-            // If your app is not yet listening, start a new listener.
+            // If your app is not yet listening, start a new browserDelegate.
             networkAdvertiser = NetworkAdvertiser().start(
                 type: advertiserType,
                 advertisingName: advertisingName,
@@ -109,14 +109,14 @@ extension RemoteLoggerManager {
 
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
-    public func browseAdvertiser(listener: RemoteLoggerBrowserDelegate, autoConnect: Bool = false, passcode: String = "", receiver: RemoteLoggerReceiveDelegate? = nil) {
+    public func browseAdvertiser(delegate: RemoteLoggerBrowserDelegate, autoConnect: Bool = false, passcode: String = "", receiveDelegate: RemoteLoggerReceiveDelegate? = nil) {
         // netlog.entered(self)
 
-        self.listener = listener
+        self.browserDelegate = delegate
         self.autoConnectToAdvertiser = autoConnect
         if autoConnect {
             self.passcode = passcode
-            self.receiver = receiver
+            self.receiveDelegate = receiveDelegate
         }
 
         networkBrowser = NetworkBrowser()
@@ -154,12 +154,12 @@ extension RemoteLoggerManager {
         )
     }
 
-    public func setReceiverToAdvertiser(_ receiver: RemoteLoggerReceiveDelegate?) -> Bool {
+    public func setReceiverToAdvertiser(_ receiveDelegate: RemoteLoggerReceiveDelegate?) -> Bool {
         // netlog.entered(self)
 
         guard let networkConnection = networkConnection else { return false }
 
-        self.receiver = receiver
+        self.receiveDelegate = receiveDelegate
 
         networkConnection.connector = self
 
@@ -220,11 +220,11 @@ extension RemoteLoggerManager: NetworkBrowserDelegate {
             if let advertiser = advertisers.first {
                 selectedAdvertiser = advertiser
                 connectToAdvertiser(passcode: passcode)
-                listener?.connected(advertiser: advertiser)
+                browserDelegate?.connected(advertiser: advertiser)
             }
         }
         else {
-            listener?.changed(advertisers: advertisers)
+            browserDelegate?.changed(advertisers: advertisers)
         }
     }
 }
@@ -238,7 +238,7 @@ extension RemoteLoggerManager: NetworkAdvertiserDelegate {
     public func connected(_ connection: NetworkConnection) {
         // netlog.entered(self)
 
-        if receiver != nil {
+        if receiveDelegate != nil {
             return
         }
 
@@ -255,17 +255,17 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
     public func ready(connection: NetworkConnection) {
         // netlog.entered(self)
 
-        if let receiver = receiver {
-            receiver.ready(self)
+        if let receiveDelegate = receiveDelegate {
+            receiveDelegate.ready(self)
             return
         }
 
         // Auto
         if self.autoConnectToAdvertiser {
-            _ = setReceiverToAdvertiser(receiver)
+            _ = setReceiverToAdvertiser(receiveDelegate)
         }
         // これで画面を遷移する。遷移すると上書きされる
-        listener?.ready()
+        browserDelegate?.ready()
     }
 
     // Ignore connection failures and messages prior to starting a RemoteLogger.
@@ -274,8 +274,8 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
 
         self.networkConnection = nil
 
-        if let receiver = receiver {
-            receiver.failed(self)
+        if let receiveDelegate = receiveDelegate {
+            receiveDelegate.failed(self)
             return
         }
     }
@@ -285,8 +285,8 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
 
         self.networkConnection = nil
 
-        if let receiver = receiver {
-            receiver.failed(self)
+        if let receiveDelegate = receiveDelegate {
+            receiveDelegate.failed(self)
             return
         }
     }
@@ -294,7 +294,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
     public func received(connection: NetworkConnection, content: Data?, message: NWProtocolFramer.Message) {
         // netlog.entered(self)
 
-        if let receiver = receiver {
+        if let receiveDelegate = receiveDelegate {
             guard let content = content else {
                 return
             }
@@ -304,10 +304,10 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
                     break
                 case .log:
                     let log_message = String(data: content, encoding: .unicode)
-                    receiver.received(self, log: log_message)
+                    receiveDelegate.received(self, log: log_message)
                 case .control:
                     let control_message = String(data: content, encoding: .unicode)
-                    receiver.received(self, control: control_message)
+                    receiveDelegate.received(self, control: control_message)
             }
             return
         }

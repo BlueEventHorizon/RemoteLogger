@@ -9,11 +9,11 @@
 import Foundation
 
 #if canImport(PPublisher)
-    import PPublisher
+import PPublisher
 #endif
 
 #if canImport(RemoteLogger)
-    import RemoteLogger
+import RemoteLogger
 #endif
 
 @available(iOS 13.0, *)
@@ -32,7 +32,7 @@ public class RemoteLoggerMonitor {
     }
 
     public func strat() {
-        monitor?.startAdvertiser(advertisingName: "RemoteLoggerMonitor", passcode: "PASSCODE", receiver: self)
+        monitor?.startAdvertiser(advertisingName: "RemoteLoggerMonitor", passcode: "PASSCODE", receiveDelegate: self)
     }
 }
 
@@ -56,3 +56,4 @@ extension RemoteLoggerMonitor: RemoteLoggerReceiveDelegate {
         print("🍏 \(control)")
     }
 }
+

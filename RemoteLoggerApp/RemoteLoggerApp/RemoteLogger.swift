@@ -57,7 +57,7 @@ public class RemoteLogger: LoggerDependency {
     private init() {
         // netlog.debug("(1) configuration", instance: self)
 
-        manager.browseAdvertiser(listener: self, autoConnect: true, passcode: "PASSCODE", receiver: nil)
+        manager.browseAdvertiser(delegate: self, autoConnect: true, passcode: "PASSCODE", receiveDelegate: nil)
     }
 
     public func preFix(_ level: Logger.Level) -> String {
