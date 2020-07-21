@@ -32,6 +32,5 @@ Usage is just simple.
 
 
 
-App 
+Logger App
 
-<img src="./cap1.jpg" width="620">

@@ -28,6 +28,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        collectionParentView.layer.borderWidth = 1.0
+        collectionParentView.layer.borderColor = UIColor.lightGray.cgColor
+        collectionParentView.layer.cornerRadius = 4.0
         textView.isEditable = false
 
         monitor.receivedLog.subscribe(self) { log in

@@ -68,10 +68,18 @@
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lfl-CO-88g">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="712"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -81,13 +89,17 @@
                                                     <constraint firstAttribute="trailing" secondItem="Lfl-CO-88g" secondAttribute="trailing" id="Rk7-aP-pjy"/>
                                                     <constraint firstItem="Lfl-CO-88g" firstAttribute="leading" secondItem="hFf-hb-Oyv" secondAttribute="leading" id="g0K-ys-sea"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mG-na-aUl">
                                                 <rect key="frame" x="0.0" y="768" width="374" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iz8-ly-ItR">
-                                                        <rect key="frame" x="189" y="10" width="36" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iz8-ly-ItR">
+                                                        <rect key="frame" x="169" y="10" width="36" height="30"/>
                                                         <state key="normal" title="Clear"/>
                                                         <connections>
                                                             <action selector="pushedClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikU-Uc-c22"/>
@@ -96,7 +108,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="Iz8-ly-ItR" firstAttribute="centerY" secondItem="1mG-na-aUl" secondAttribute="centerY" id="I4k-zc-eBU"/>
                                                     <constraint firstAttribute="height" constant="50" id="aMR-dc-CYa"/>
+                                                    <constraint firstItem="Iz8-ly-ItR" firstAttribute="centerX" secondItem="1mG-na-aUl" secondAttribute="centerX" id="az2-cT-bJe"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
