@@ -60,7 +60,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateCheckBox(index: 0)
+        for button in checkButton.enumerated() {
+            if button.element.tag == 0 {
+                updateCheckBox(index: button.offset)
+                checkButtonType = CheckButtonType(rawValue: 0)
+                break
+            }
+        }
 
         log.monitorNamePublisher.subscribe(self) { [weak self] name in
             self?.monitorNameLabel.text = name
