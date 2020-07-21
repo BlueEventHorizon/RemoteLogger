@@ -24,39 +24,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var monitorNameLabel: UILabel!
     @IBOutlet weak var logMessageTextField: UITextField!
-    @IBAction func senfLog(_ sender: Any) {
-        guard let message = logMessageTextField.text else { return }
 
-        switch checkButtonType {
-            case .debug:
-                log.debug(message)
-            case .info:
-                log.info(message)
-            case .notice:
-                log.notice(message)
-            case .warning:
-                log.warning(message)
-            case .error:
-                log.error(message)
-            case .none:
-                break
-        }
+    @IBOutlet weak var logLebelSelectorStack: UIStackView!
+
+
+    @IBAction func sendLog(_ sender: Any) {
+        sendLog()
     }
 
     @IBOutlet var checkButton: [UIButton]!
 
     @IBAction func checked(_ sender: UIButton) {
+        var tag = -1
         var index = -1
         for button in checkButton.enumerated() {
             if button.element == sender {
                 index = button.offset
+                tag = button.element.tag
                 break
             }
         }
 
-        updateCheckBox(index: index)
-
-        checkButtonType = CheckButtonType(rawValue: index)
+        if tag >= 0 {
+            updateCheckBox(index: index)
+            checkButtonType = CheckButtonType(rawValue: tag)
+        }
     }
 
     enum CheckButtonType: Int, CaseIterable {
@@ -90,6 +82,25 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
 
         keyboardManager.removeAction()
+    }
+
+    private func sendLog() {
+        guard let message = logMessageTextField.text else { return }
+
+        switch checkButtonType {
+            case .debug:
+                log.debug(message)
+            case .info:
+                log.info(message)
+            case .notice:
+                log.notice(message)
+            case .warning:
+                log.warning(message)
+            case .error:
+                log.error(message)
+            case .none:
+                break
+        }
     }
 
     private func updateCheckBox(index: Int) {

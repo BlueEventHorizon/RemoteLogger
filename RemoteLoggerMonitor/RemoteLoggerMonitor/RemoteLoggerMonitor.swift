@@ -8,10 +8,14 @@
 
 import Foundation
 import RemoteLogger
+import PPublisher
 
 @available(iOS 13.0, *)
 public class RemoteLoggerMonitor {
+
     private var monitor: RemoteLoggerManager?
+
+    var receivedLog = Publisher<String>()
 
     public init() {
         configure()
@@ -35,10 +39,13 @@ extension RemoteLoggerMonitor: RemoteLoggerReceiveDelegate {
     }
 
     public func received(_ sender: RemoteLoggerManager, log: String?) {
-        print("🍎 \(log ?? "")")
+        guard let log = log else { return }
+        receivedLog.publish(log)
+        print("🍎 \(log)")
     }
 
     public func received(_ sender: RemoteLoggerManager, control: String?) {
-        print("🍏 \(control ?? "")")
+        guard let control = control else { return }
+        print("🍏 \(control)")
     }
 }

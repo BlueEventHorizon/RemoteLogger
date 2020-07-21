@@ -88,7 +88,7 @@
                                                             <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EmJ-U4-cpQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-ld-l8w">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-ld-l8w">
                                                         <rect key="frame" x="0.0" y="40" width="374" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="qYj-d3-hCZ"/>
@@ -100,7 +100,7 @@
                                                             <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkJ-RI-jE3"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-bs-Xob">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-bs-Xob">
                                                         <rect key="frame" x="0.0" y="80" width="374" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="dmA-TS-See"/>
@@ -112,7 +112,7 @@
                                                             <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1qP-Qe-wp3"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsG-a1-iBL">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsG-a1-iBL">
                                                         <rect key="frame" x="0.0" y="120" width="374" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="cOh-vc-AiO"/>
@@ -124,7 +124,7 @@
                                                             <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P5k-lD-LfN"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHA-Gs-zlF">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHA-Gs-zlF">
                                                         <rect key="frame" x="0.0" y="160" width="374" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="c0g-ZI-foG"/>
@@ -171,7 +171,7 @@
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="senfLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Av1-V5-lbr"/>
+                                                    <action selector="sendLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7tA-Hu-sJS"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhB-6s-CjK">
@@ -201,6 +201,7 @@
                     </view>
                     <connections>
                         <outlet property="bottom" destination="VBK-HB-I8x" id="wwV-1T-qrS"/>
+                        <outlet property="logLebelSelectorStack" destination="wGk-vn-Btc" id="epf-K4-jgI"/>
                         <outlet property="logMessageTextField" destination="rpv-XH-LW2" id="qTC-OE-pRi"/>
                         <outlet property="monitorNameLabel" destination="YjL-8K-wTH" id="ZoA-7e-95i"/>
                         <outlet property="targetViewToScroll" destination="hgp-OH-L3I" id="TQd-CR-E6x"/>
