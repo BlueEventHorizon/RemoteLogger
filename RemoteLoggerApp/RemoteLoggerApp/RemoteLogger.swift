@@ -9,15 +9,15 @@
 import Foundation
 
 #if canImport(Logger)
-import Logger
+    import Logger
 #endif
 
 #if canImport(PPublisher)
-import PPublisher
+    import PPublisher
 #endif
 
 #if canImport(RemoteLogger)
-import RemoteLogger
+    import RemoteLogger
 #endif
 
 extension Logger {
@@ -106,4 +106,3 @@ extension RemoteLogger: RemoteLoggerBrowserDelegate {
 
     public func ready() {}
 }
-
