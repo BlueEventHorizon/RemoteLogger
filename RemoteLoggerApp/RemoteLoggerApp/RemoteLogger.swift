@@ -9,15 +9,15 @@
 import Foundation
 
 #if canImport(Logger)
-    import Logger
+import Logger
 #endif
 
 #if canImport(PPublisher)
-    import PPublisher
+import PPublisher
 #endif
 
 #if canImport(RemoteLogger)
-    import RemoteLogger
+import RemoteLogger
 #endif
 
 extension Logger {
@@ -57,7 +57,7 @@ public class RemoteLogger: LoggerDependency {
     private init() {
         // netlog.debug("(1) configuration", instance: self)
 
-        manager.browseAdvertiser(listener: self)
+        manager.browseAdvertiser(listener: self, autoConnect: true, passcode: "PASSCODE", receiver: nil)
     }
 
     public func preFix(_ level: Logger.Level) -> String {
@@ -98,36 +98,12 @@ extension RemoteLogger: RemoteLoggerBrowserDelegate {
             monitorNamePublisher.publish("Not Connected")
             return
         }
-
-        // netlog.debug("(2) Found Advertiser and select it", instance: self)
-
-        if let advertiser = advertisers.first {
-            manager.selectedAdvertiser = advertiser
-            monitorNamePublisher.publish(advertiser.name)
-
-            // netlog.debug("(3) Start to connect with passcode", instance: self)
-
-            manager.connectToAdvertiser(passcode: "PASSCODE")
-        }
-        else {
-            monitorNamePublisher.publish("Not Connected")
-        }
     }
 
-    public func ready() {
-        // netlog.debug("(4) Connection Ready", instance: self)
-
-        _ = manager.setReceiverToAdvertiser(self)
+    public func connected(advertiser: AdvertiserInfo) {
+        monitorNamePublisher.publish(advertiser.name)
     }
+
+    public func ready() {}
 }
 
-@available(iOS 13.0, *)
-extension RemoteLogger: RemoteLoggerReceiveDelegate {
-    public func ready(_ sender: RemoteLoggerManager) {}
-
-    public func failed(_ sender: RemoteLoggerManager) {}
-
-    public func received(_ sender: RemoteLoggerManager, log: String?) {}
-
-    public func received(_ sender: RemoteLoggerManager, control: String?) {}
-}
