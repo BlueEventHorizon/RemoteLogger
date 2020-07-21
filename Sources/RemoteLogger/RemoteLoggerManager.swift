@@ -26,6 +26,7 @@ public protocol RemoteLoggerReceiveDelegate: AnyObject {
 
 public protocol RemoteLoggerBrowserDelegate: AnyObject {
     func changed(advertisers: [AdvertiserInfo])
+    func connected(advertiser: AdvertiserInfo)
     func ready()
 }
 
@@ -41,9 +42,6 @@ public class RemoteLoggerManager {
     private weak var listener: RemoteLoggerBrowserDelegate?
     private weak var receiver: RemoteLoggerReceiveDelegate?
 
-    // Which advertiser to be connected is selected by upper layer module.
-    public var selectedAdvertiser: AdvertiserInfo?
-
     private var results: [NWBrowser.Result] = [NWBrowser.Result]()
     private(set) var advertisers = [AdvertiserInfo]()
 
@@ -51,6 +49,11 @@ public class RemoteLoggerManager {
     private var preSharedCode = "preSharedCode"
     private var advertisingName: String = "DefaultAdvertisingName"
     private var passcode: String = ""
+
+    private var autoConnectToAdvertiser: Bool = false
+
+    // Which advertiser to be connected is selected by upper layer module.
+    public var selectedAdvertiser: AdvertiserInfo?
 
     public func setPreSharedCode(advertiserType: String, preSharedCode: String) {
         self.advertiserType = advertiserType
@@ -106,10 +109,15 @@ extension RemoteLoggerManager {
 
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
-    public func browseAdvertiser(listener: RemoteLoggerBrowserDelegate) {
+    public func browseAdvertiser(listener: RemoteLoggerBrowserDelegate, autoConnect: Bool = false, passcode: String = "", receiver: RemoteLoggerReceiveDelegate? = nil) {
         // netlog.entered(self)
 
         self.listener = listener
+        self.autoConnectToAdvertiser = autoConnect
+        if autoConnect {
+            self.passcode = passcode
+            self.receiver = receiver
+        }
 
         networkBrowser = NetworkBrowser()
             .start(
@@ -146,7 +154,7 @@ extension RemoteLoggerManager {
         )
     }
 
-    public func setReceiverToAdvertiser(_ receiver: RemoteLoggerReceiveDelegate) -> Bool {
+    public func setReceiverToAdvertiser(_ receiver: RemoteLoggerReceiveDelegate?) -> Bool {
         // netlog.entered(self)
 
         guard let networkConnection = networkConnection else { return false }
@@ -207,7 +215,17 @@ extension RemoteLoggerManager: NetworkBrowserDelegate {
             cancelConnection()
         }
 
-        listener?.changed(advertisers: advertisers)
+        // Auto
+        if self.autoConnectToAdvertiser {
+            if let advertiser = advertisers.first {
+                selectedAdvertiser = advertiser
+                connectToAdvertiser(passcode: passcode)
+                listener?.connected(advertiser: advertiser)
+            }
+        }
+        else {
+            listener?.changed(advertisers: advertisers)
+        }
     }
 }
 
@@ -242,6 +260,10 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
             return
         }
 
+        // Auto
+        if self.autoConnectToAdvertiser {
+            _ = setReceiverToAdvertiser(receiver)
+        }
         // これで画面を遷移する。遷移すると上書きされる
         listener?.ready()
     }
