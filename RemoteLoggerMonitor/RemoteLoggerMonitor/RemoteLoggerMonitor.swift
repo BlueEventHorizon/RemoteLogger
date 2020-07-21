@@ -12,6 +12,10 @@ import Foundation
     import PPublisher
 #endif
 
+#if canImport(RemoteLogger)
+    import RemoteLogger
+#endif
+
 @available(iOS 13.0, *)
 public class RemoteLoggerMonitor {
     private var monitor: RemoteLoggerManager?
