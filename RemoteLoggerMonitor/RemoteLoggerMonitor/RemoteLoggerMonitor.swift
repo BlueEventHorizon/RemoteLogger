@@ -9,7 +9,7 @@
 import Foundation
 
 #if canImport(PPublisher)
-import PPublisher
+    import PPublisher
 #endif
 
 @available(iOS 13.0, *)
@@ -50,4 +50,3 @@ extension RemoteLoggerMonitor: RemoteLoggerReceiveDelegate {
         print("🍏 \(control)")
     }
 }
-
