@@ -70,6 +70,7 @@ class ViewController: UIViewController {
 
         log.monitorNamePublisher.subscribe(self) { [weak self] name in
             self?.monitorNameLabel.text = name
+            log.myname = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName")
         }
         .unsubscribed(by: bag)
     }

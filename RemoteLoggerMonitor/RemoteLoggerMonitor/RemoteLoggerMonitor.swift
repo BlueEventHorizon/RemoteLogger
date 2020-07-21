@@ -17,6 +17,7 @@ public class RemoteLoggerMonitor {
     private var monitor: RemoteLoggerManager?
 
     var receivedLog = Publisher<String>()
+    var receivedControl = Publisher<String>()
 
     public init() {
         configure()
@@ -47,6 +48,7 @@ extension RemoteLoggerMonitor: RemoteLoggerReceiveDelegate {
 
     public func received(_ sender: RemoteLoggerManager, control: String?) {
         guard let control = control else { return }
+        receivedControl.publish(control)
         print("🍏 \(control)")
     }
 }

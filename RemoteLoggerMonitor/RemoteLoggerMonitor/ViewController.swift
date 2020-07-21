@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 //    var flowLayout: UICollectionViewFlowLayout!
 //    var collectionView: UICollectionView!
 
+    @IBOutlet weak var loggerName: UILabel!
     @IBOutlet weak var collectionParentView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBAction func pushedClear(_ sender: Any) {
@@ -29,9 +30,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         textView.isEditable = false
 
-        monitor.receivedLog.subscribe(self, latest: false, main: true) { log in
+        monitor.receivedLog.subscribe(self) { log in
             self.logall = self.logall + log + "\n"
             self.textView.text = self.logall
+        }
+
+        monitor.receivedControl.subscribe(self) { control in
+            self.loggerName.text = control
         }
 
         monitor.strat()

@@ -34,6 +34,16 @@ extension Logger {
     public var monitorNamePublisher: Publisher<String> {
         RemoteLogger.shared.monitorNamePublisher
     }
+
+    @available(iOS 13.0, *)
+    public var myname: String {
+        set {
+            RemoteLogger.shared.myname = newValue
+        }
+        get {
+            ""
+        }
+    }
 }
 
 @available(iOS 13.0, *)
@@ -69,6 +79,15 @@ public class RemoteLogger: LoggerDependency {
     public func log(level: Logger.Level, message: String, formattedMessage: String) {
         print(formattedMessage)
         manager.sendLog(formattedMessage)
+    }
+
+    public var myname: String {
+        set {
+            manager.sendControl(newValue)
+        }
+        get {
+            ""
+        }
     }
 }
 
@@ -108,11 +127,7 @@ extension RemoteLogger: RemoteLoggerReceiveDelegate {
 
     public func failed(_ sender: RemoteLoggerManager) {}
 
-    public func received(_ sender: RemoteLoggerManager, log: String?) {
-        //
-    }
+    public func received(_ sender: RemoteLoggerManager, log: String?) {}
 
-    public func received(_ sender: RemoteLoggerManager, control: String?) {
-        //
-    }
+    public func received(_ sender: RemoteLoggerManager, control: String?) {}
 }
