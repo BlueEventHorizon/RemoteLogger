@@ -21,12 +21,7 @@
 		7647FD2F24BF23C7000EE3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */; };
 		7647FD3A24BF23C7000EE3CA /* RemoteLoggerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */; };
 		76624E9624C0498A00137BFE /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 76624E9524C0498A00137BFE /* Logger */; };
-		7685181424C7E7D800E3F99A /* RemoteLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685180E24C7E7D800E3F99A /* RemoteLoggerProtocol.swift */; };
-		7685181524C7E7D800E3F99A /* RemoteLoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685180F24C7E7D800E3F99A /* RemoteLoggerManager.swift */; };
-		7685181624C7E7D800E3F99A /* NetworkAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685181024C7E7D800E3F99A /* NetworkAdvertiser.swift */; };
-		7685181724C7E7D800E3F99A /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685181124C7E7D800E3F99A /* NetworkConnection.swift */; };
-		7685181824C7E7D800E3F99A /* NetworkBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685181224C7E7D800E3F99A /* NetworkBrowser.swift */; };
-		7685181924C7E7D800E3F99A /* NWParameters+TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685181324C7E7D800E3F99A /* NWParameters+TLS.swift */; };
+		7685181D24C8010C00E3F99A /* RemoteLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7685181C24C8010C00E3F99A /* RemoteLogger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +51,6 @@
 		7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteLoggerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoggerAppTests.swift; sourceTree = "<group>"; };
 		7647FD3B24BF23C7000EE3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7685180E24C7E7D800E3F99A /* RemoteLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLoggerProtocol.swift; sourceTree = "<group>"; };
-		7685180F24C7E7D800E3F99A /* RemoteLoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLoggerManager.swift; sourceTree = "<group>"; };
-		7685181024C7E7D800E3F99A /* NetworkAdvertiser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdvertiser.swift; sourceTree = "<group>"; };
-		7685181124C7E7D800E3F99A /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		7685181224C7E7D800E3F99A /* NetworkBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBrowser.swift; sourceTree = "<group>"; };
-		7685181324C7E7D800E3F99A /* NWParameters+TLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWParameters+TLS.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76624E9624C0498A00137BFE /* Logger in Frameworks */,
+				7685181D24C8010C00E3F99A /* RemoteLogger in Frameworks */,
 				760F83B424C1FF8C000C46B3 /* PPublisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +111,6 @@
 				7647FD2624BF23C6000EE3CA /* ViewController.swift */,
 				7647FD2824BF23C6000EE3CA /* Main.storyboard */,
 				76258D0624C03CE900B090E5 /* RemoteLogger.swift */,
-				7685180D24C7E7D800E3F99A /* RemoteLogger */,
 				76046B6A24C48F3E005D8D03 /* Tools */,
 				7647FD2B24BF23C7000EE3CA /* Assets.xcassets */,
 				7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */,
@@ -137,20 +126,6 @@
 				7647FD3B24BF23C7000EE3CA /* Info.plist */,
 			);
 			path = RemoteLoggerAppTests;
-			sourceTree = "<group>";
-		};
-		7685180D24C7E7D800E3F99A /* RemoteLogger */ = {
-			isa = PBXGroup;
-			children = (
-				7685180E24C7E7D800E3F99A /* RemoteLoggerProtocol.swift */,
-				7685180F24C7E7D800E3F99A /* RemoteLoggerManager.swift */,
-				7685181024C7E7D800E3F99A /* NetworkAdvertiser.swift */,
-				7685181124C7E7D800E3F99A /* NetworkConnection.swift */,
-				7685181224C7E7D800E3F99A /* NetworkBrowser.swift */,
-				7685181324C7E7D800E3F99A /* NWParameters+TLS.swift */,
-			);
-			name = RemoteLogger;
-			path = ../../Sources/RemoteLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +148,7 @@
 			packageProductDependencies = (
 				76624E9524C0498A00137BFE /* Logger */,
 				760F83B324C1FF8C000C46B3 /* PPublisher */,
+				7685181C24C8010C00E3F99A /* RemoteLogger */,
 			);
 			productName = RemoteLoggerApp;
 			productReference = 7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */;
@@ -227,6 +203,7 @@
 			packageReferences = (
 				76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */,
 				760F83B224C1FF8C000C46B3 /* XCRemoteSwiftPackageReference "PPublisher" */,
+				7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */,
 			);
 			productRefGroup = 7647FD2024BF23C6000EE3CA /* Products */;
 			projectDirPath = "";
@@ -284,20 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7685181824C7E7D800E3F99A /* NetworkBrowser.swift in Sources */,
 				7647FD2724BF23C6000EE3CA /* ViewController.swift in Sources */,
 				76258D0724C03CE900B090E5 /* RemoteLogger.swift in Sources */,
-				7685181624C7E7D800E3F99A /* NetworkAdvertiser.swift in Sources */,
 				76046B6324C48EA4005D8D03 /* KeyboardManager.swift in Sources */,
 				7647FD2324BF23C6000EE3CA /* AppDelegate.swift in Sources */,
-				7685181924C7E7D800E3F99A /* NWParameters+TLS.swift in Sources */,
 				76046B6C24C48F89005D8D03 /* UIView+Ext.swift in Sources */,
-				7685181524C7E7D800E3F99A /* RemoteLoggerManager.swift in Sources */,
 				76046B6924C48F38005D8D03 /* Const.swift in Sources */,
-				7685181724C7E7D800E3F99A /* NetworkConnection.swift in Sources */,
 				76046B6724C48EEA005D8D03 /* UIView+Responder.swift in Sources */,
 				7647FD2524BF23C6000EE3CA /* SceneDelegate.swift in Sources */,
-				7685181424C7E7D800E3F99A /* RemoteLoggerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +555,14 @@
 				minimumVersion = 1.5.4;
 			};
 		};
+		7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:BlueEventHorizon/RemoteLogger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -596,6 +575,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */;
 			productName = Logger;
+		};
+		7685181C24C8010C00E3F99A /* RemoteLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */;
+			productName = RemoteLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
