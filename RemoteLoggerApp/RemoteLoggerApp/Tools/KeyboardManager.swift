@@ -6,6 +6,7 @@
 //  Copyright (c) 2017 k2moons. All rights reserved.
 //
 
+import Logger
 import UIKit
 
 public final class KeyboardManager {
@@ -15,6 +16,8 @@ public final class KeyboardManager {
     }
 
     // MARK: - Property
+
+    private let log = Logger()
 
     // キーボードが表示された時の挙動を（子クラスで）記述する
     public private(set) var keyboardHandler: ((_ type: KeyboardManager.Action, _ height: CGFloat, _ duration: TimeInterval) -> Void)?

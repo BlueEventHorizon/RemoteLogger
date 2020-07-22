@@ -2,6 +2,7 @@
 
 **RemoteLogger is the logging tool for output log to the another device through local network**
 
+It means you can see your app's log on a real iPhone/iPad device by another one at anywhere if they are in the same local network.
 
 
 ![capmovie1](./cap0.jpg)
@@ -10,9 +11,9 @@
 
 ## Restriction
 
-RemoteLogger works only after iOS13. Because it uses Network Framework.
+RemoteLogger works only after iOS13 since it uses Network Framework.
 
-And core modules come from [Apple's example](https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol). So if you use this code, you must comply with the [license](./LICENSE.txt)
+The network core modules come from [Apple's example](https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol). So if you use this code, you must comply with the [license](./LICENSE.txt)
 
 ```
 Copyright © 2019 Apple Inc.
@@ -30,7 +31,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Usage is just simple.
 
-
-
-Logger App
-
+sorry, not yet written.

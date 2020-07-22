@@ -8,7 +8,9 @@
 
 import Logger
 import PPublisher
-import RemoteLogger
+#if canImport(RemoteLogger)
+    import RemoteLogger
+#endif
 import UIKit
 
 let log = Logger.remoteLogger()
@@ -17,6 +19,7 @@ class ViewController: UIViewController {
     private var checkButtonType: CheckButtonType?
     private var bag = SubscriptionBag()
     private var keyboardManager = KeyboardManager.shared
+    private var appName: String?
     @IBOutlet weak var top: NSLayoutConstraint!
     @IBOutlet weak var bottom: NSLayoutConstraint!
     @IBOutlet weak var targetViewToScroll: UIView!
@@ -60,6 +63,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
+
+        title = appName
+
         for button in checkButton.enumerated() {
             if button.element.tag == 0 {
                 updateCheckBox(index: button.offset)
@@ -70,7 +77,7 @@ class ViewController: UIViewController {
 
         log.monitorNamePublisher.subscribe(self) { [weak self] name in
             self?.monitorNameLabel.text = name
-            log.myname = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String
+            log.myname = self?.appName ?? ""
         }
         .unsubscribed(by: bag)
     }

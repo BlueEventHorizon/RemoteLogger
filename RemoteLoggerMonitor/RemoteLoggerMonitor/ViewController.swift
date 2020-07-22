@@ -12,9 +12,9 @@ import PPublisher
 import UIKit
 
 class ViewController: UIViewController {
-    let monitor = RemoteLoggerMonitor()
-//    var flowLayout: UICollectionViewFlowLayout!
-//    var collectionView: UICollectionView!
+    private let monitor = RemoteLoggerMonitor()
+    private var appName: String?
+    private var logall: String = ""
 
     @IBOutlet weak var loggerName: UILabel!
     @IBOutlet weak var collectionParentView: UIView!
@@ -24,10 +24,11 @@ class ViewController: UIViewController {
         textView.text = logall
     }
 
-    var logall: String = ""
-
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
+        title = appName
 
         collectionParentView.layer.borderWidth = 1.0
         collectionParentView.layer.borderColor = UIColor.lightGray.cgColor
@@ -46,36 +47,3 @@ class ViewController: UIViewController {
         monitor.strat()
     }
 }
-
-// extension ViewController {
-
-// func configure() {
-//        flowLayout = ColumnFlowLayout()
-//        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
-//        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        collectionView.backgroundColor = UIColor.systemBackground
-//        collectionView.alwaysBounceVertical = true
-//        view.addSubview(collectionView)
-//
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
-//
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
-// }
-// }
-
-// extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-// }
-
-//
-// class ColumnFlowLayout: UICollectionViewFlowLayout {
-//
-// }
