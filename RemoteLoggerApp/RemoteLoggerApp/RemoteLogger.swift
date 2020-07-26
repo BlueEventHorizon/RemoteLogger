@@ -47,7 +47,7 @@ extension Logger {
 }
 
 @available(iOS 13.0, *)
-public class RemoteLogger: LoggerDependency {
+public class RemoteLogger {
     static let shared = RemoteLogger()
 
     var monitorNamePublisher = Publisher<String>()
@@ -60,27 +60,6 @@ public class RemoteLogger: LoggerDependency {
         manager.browseAdvertiser(delegate: self, autoConnect: true, passcode: "PASSCODE", receiveDelegate: nil)
     }
 
-    public func preFix(_ level: Logger.Level) -> String {
-        switch level {
-            case .trace: return "===>"
-            case .debug: return "[🟡 DEBG]"
-            case .info: return "[🔵 INFO]"
-            case .notice: return "[🟢 NOTE]"
-            case .warning: return "⚠️⚠️⚠️"
-            case .error: return "❌❌❌"
-            case .fatal: return "🔥🔥🔥"
-        }
-    }
-
-    public func getTimeStampType(_ level: Logger.Level) -> Logger.TimeStampType {
-        .full
-    }
-
-    public func log(level: Logger.Level, message: String, formattedMessage: String) {
-        print(formattedMessage)
-        manager.sendLog(formattedMessage)
-    }
-
     public var myname: String {
         set {
             manager.sendControl(newValue)
@@ -89,6 +68,40 @@ public class RemoteLogger: LoggerDependency {
             ""
         }
     }
+}
+
+extension RemoteLogger: LoggerDependency {
+    // if return false, Logger does not execute log(_ message: String)
+    public func log(_ context: LogContext) -> Bool {
+        let level: String = preFix(context.level)
+
+        var formattedMessage: String = ""
+
+        switch context.level {
+            case .trace:
+                formattedMessage = "\(level) \(context.methodName())\(context.addSpacer(" -- ", to: context.message))"
+            case .debug:
+                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
+            case .info:
+                formattedMessage = "\(level) [\(context.timestamp())]\(context.addSpacer(" ", to: context.message)) -- \(context.lineInfo())"
+            case .notice:
+                formattedMessage = "\(level) [\(context.timestamp())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
+            case .warning:
+                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
+            case .error:
+                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
+            case .fatal:
+                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
+            case .deinit:
+                formattedMessage = "\(level) [\(context.timestamp())]\(context.addSpacer(" -- ", to: context.message)) -- \(context.lineInfo())"
+        }
+        manager.sendLog(formattedMessage)
+        return true
+    }
+
+//    public func log(_ message: String) {
+//
+//    }
 }
 
 @available(iOS 13.0, *)
