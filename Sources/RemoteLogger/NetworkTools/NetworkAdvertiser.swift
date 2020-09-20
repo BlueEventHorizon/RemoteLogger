@@ -23,33 +23,40 @@ public class NetworkAdvertiser {
 
     private var listener: NWListener!
 
-    public private(set) var name: String!
-    public private(set) var type: String!
+    public private(set) var type: String
+    public private(set) var preSharedCode: String
+    public private(set) var definition: NWProtocolFramer.Definition
 
+    public private(set) var name: String!
     public private(set) var passcode: String!
 
     // ここで、１個だけを接続するようにしているが、マルチで接続しても良い。
     // その場合は、cancel()はいらないし、networkConnectionを保持して判定する必要もない
     private var networkConnection: NetworkConnection?
 
-    public init() {}
+    public init(
+        type: String,
+        preSharedCode: String,
+        definition: NWProtocolFramer.Definition
+    ) {
+        self.type = type
+        self.preSharedCode = preSharedCode
+        self.definition = definition
+    }
 
     // Start listening and advertising.
     @discardableResult
     public func start(
-        type: String,
         advertisingName name: String,
-        preSharedCode: String,
         passcode: String,
-        definition: NWProtocolFramer.Definition,
         advertiser: NetworkAdvertiserDelegate?,
         connector: NetworkConnectionDelegate?
     ) -> Self {
-        // netlog.entered(self)
+        // internalLog.entered(self)
 
-        self.type = type
         self.name = name
         self.passcode = passcode
+
         self.advertiser = advertiser
         self.connector = connector
 
@@ -69,19 +76,19 @@ public class NetworkAdvertiser {
             listener.stateUpdateHandler = { newState in
                 switch newState {
                     case .ready:
-                        // netlog.info("Listener ready on \(String(describing: listener.port))")
-                        break
+                        internalLog.info("Listener ready on \(String(describing: listener.port))")
+
                     case let .failed(error):
                         // If the listener fails, re-start.
-                        // netlog.error("Listener failed with \(error), restarting")
+                        internalLog.error("Listener failed with \(error), restarting")
                         listener.cancel()
-                        self.start(type: self.type, advertisingName: name, preSharedCode: preSharedCode, passcode: self.passcode, definition: definition, advertiser: self.advertiser, connector: self.connector)
+                        self.start(advertisingName: name, passcode: self.passcode, advertiser: self.advertiser, connector: self.connector)
 
                     case .setup:
-                        // netlog.info("Listener setup")
-                        break
+                        internalLog.info("Listener setup")
+
                     case let .waiting(error):
-                        // netlog.error("Listener waiting with \(error)")
+                        internalLog.error("Listener waiting with \(error)")
 
                         guard let networkConnection = self.networkConnection else { return }
 
@@ -89,8 +96,7 @@ public class NetworkAdvertiser {
                         self.networkConnection = nil
 
                     case .cancelled:
-                        // netlog.warning("Listener cancelled")
-                        break
+                        internalLog.warning("Listener cancelled")
                 }
             }
 
@@ -101,10 +107,8 @@ public class NetworkAdvertiser {
                 if self.networkConnection == nil {
                     if let advertiser = self.advertiser, let connector = self.connector {
                         // Accept a new connection.
-                        let connection = NetworkConnection(connection: newConnection, definition: definition, connector: connector)
+                        let connection = NetworkConnection(connection: newConnection, definition: self.definition, connector: connector)
                         self.networkConnection = connection
-
-                        print(newConnection.endpoint.debugDescription)
 
                         advertiser.connected(connection)
                     }
@@ -119,7 +123,7 @@ public class NetworkAdvertiser {
             listener.start(queue: .main)
         }
         catch {
-            // netlog.error("Failed to create listener")
+            // internalLog.error("Failed to create listener")
             abort()
         }
 
@@ -128,7 +132,7 @@ public class NetworkAdvertiser {
 
     // If the user changes their name, update the advertised name.
     public func change(advertisingName: String) {
-        // netlog.entered(self)
+        // internalLog.entered(self)
 
         self.name = advertisingName
         if let listener = listener {
