@@ -71,37 +71,24 @@ public class RemoteLogger {
 }
 
 extension RemoteLogger: LoggerDependency {
-    // if return false, Logger does not execute log(_ message: String)
-    public func log(_ context: LogContext) -> Bool {
-        let level: String = preFix(context.level)
-
-        var formattedMessage: String = ""
+    public func log(_ context: LogContext) {
+        var preFix: String = ""
 
         switch context.level {
-            case .trace:
-                formattedMessage = "\(level) \(context.methodName())\(context.addSpacer(" -- ", to: context.message))"
-            case .debug:
-                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
-            case .info:
-                formattedMessage = "\(level) [\(context.timestamp())]\(context.addSpacer(" ", to: context.message)) -- \(context.lineInfo())"
-            case .notice:
-                formattedMessage = "\(level) [\(context.timestamp())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
-            case .warning:
-                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
-            case .error:
-                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
-            case .fatal:
-                formattedMessage = "\(level) [\(context.timestamp())] [\(context.threadName())]\(context.addSpacer(" ", to: context.message)) -- \(context.methodName()) \(context.lineInfo())"
-            case .deinit:
-                formattedMessage = "\(level) [\(context.timestamp())]\(context.addSpacer(" -- ", to: context.message)) -- \(context.lineInfo())"
+            case .trace: preFix = "➡️"
+            case .debug: preFix = "[🛠 DEBG]"
+            case .info: preFix = "[🔵 INFO]"
+            case .notice: preFix = "[🟢 NOTE]"
+            case .warning: preFix = "[⚠️ WARN]"
+            case .error: preFix = "[🚫 ERRR]"
+            case .fatal: preFix = "[🔥 FATAL]"
+            case .deinit: preFix = "[❎ DEINIT]"
         }
-        manager.sendLog(formattedMessage)
-        return true
-    }
 
-//    public func log(_ message: String) {
-//
-//    }
+        let formatted = preFix + context.buildMessage()
+        manager.sendLog(formatted)
+        print(formatted)
+    }
 }
 
 @available(iOS 13.0, *)

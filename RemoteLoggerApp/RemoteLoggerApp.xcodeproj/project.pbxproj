@@ -552,7 +552,7 @@
 			repositoryURL = "git@github.com:BlueEventHorizon/Logger.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 3.0.0;
 			};
 		};
 		7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */ = {
