@@ -6,9 +6,8 @@
 //  Copyright © 2020 k2terada. All rights reserved.
 //
 
-import Logger
 import PPublisher
-// import RemoteLogger
+import RemoteLogger
 import UIKit
 
 class ViewController: UIViewController {
