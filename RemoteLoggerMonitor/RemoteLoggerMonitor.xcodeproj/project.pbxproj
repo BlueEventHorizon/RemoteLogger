@@ -529,7 +529,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		76AF90732517A74A00818022 /* XCRemoteSwiftPackageReference "RemoteLogger" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/k_terada/data/Dev/Moons/products/RemoteLogger";
+			repositoryURL = "../";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.2.0;
