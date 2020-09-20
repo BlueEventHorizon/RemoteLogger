@@ -3,7 +3,7 @@
 //  BwTools
 //
 //  Created by k_terada on 2020/06/21.
-//  Copyright © 2020 Apple. All rights reserved.
+//  Copyright © 2020 k2moons. All rights reserved.
 //
 
 import Foundation
@@ -42,7 +42,7 @@ public class RemoteLoggerManager {
     private weak var browserDelegate: RemoteLoggerBrowserDelegate?
     private weak var receiveDelegate: RemoteLoggerReceiveDelegate?
 
-    private var results: [NWBrowser.Result] = [NWBrowser.Result]()
+    private var results = [NWBrowser.Result]()
     private(set) var advertisers = [AdvertiserInfo]()
 
     private var advertiserType = "_remotelogger._tcp"
@@ -61,7 +61,7 @@ public class RemoteLoggerManager {
     }
 
     public func cancelConnection() {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         if let networkConnection = self.networkConnection {
             networkConnection.cancel()
@@ -79,7 +79,7 @@ public class RemoteLoggerManager {
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
     public func startAdvertiser(advertisingName name: String, passcode: String, receiveDelegate: RemoteLoggerReceiveDelegate) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         advertisingName = name
         self.receiveDelegate = receiveDelegate
@@ -89,13 +89,15 @@ extension RemoteLoggerManager {
             browserDelegate.change(advertisingName: advertisingName)
         }
         else {
-            // If your app is not yet listening, start a new browserDelegate.
-            networkAdvertiser = NetworkAdvertiser().start(
+            networkAdvertiser = NetworkAdvertiser(
                 type: advertiserType,
-                advertisingName: advertisingName,
                 preSharedCode: preSharedCode,
+                definition: RemoteLoggerProtocol.definition
+            )
+
+            networkAdvertiser?.start(
+                advertisingName: advertisingName,
                 passcode: passcode,
-                definition: RemoteLoggerProtocol.definition,
                 advertiser: self, // NetworkAdvertiserDelegate
                 connector: self // NetworkConnectionDelegate
             )
@@ -110,7 +112,7 @@ extension RemoteLoggerManager {
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
     public func browseAdvertiser(delegate: RemoteLoggerBrowserDelegate, autoConnect: Bool = false, passcode: String = "", receiveDelegate: RemoteLoggerReceiveDelegate? = nil) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         self.browserDelegate = delegate
         self.autoConnectToAdvertiser = autoConnect
@@ -123,11 +125,11 @@ extension RemoteLoggerManager {
             .start(
                 type: advertiserType,
                 delegate: self // NetworkBrowserDelegate
-        )
+            )
     }
 
     public func connectToAdvertiser(passcode: String) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let selectedAdvertiser = selectedAdvertiser else { return }
 
@@ -141,7 +143,7 @@ extension RemoteLoggerManager {
     }
 
     private func connectToAdvertiser(endpoint: NWEndpoint, interface: NWInterface?, passcode: String, definition: NWProtocolFramer.Definition) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         // Client Network Connection
         networkConnection = NetworkConnection(
@@ -155,7 +157,7 @@ extension RemoteLoggerManager {
     }
 
     public func setReceiverToAdvertiser(_ receiveDelegate: RemoteLoggerReceiveDelegate?) -> Bool {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let networkConnection = networkConnection else { return false }
 
@@ -167,7 +169,7 @@ extension RemoteLoggerManager {
     }
 
     public func getAdvertiserName() -> String? {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let selectedAdvertiser = selectedAdvertiser else { return nil }
 
@@ -187,7 +189,7 @@ extension RemoteLoggerManager {
 @available(iOS 13.0, *)
 extension RemoteLoggerManager: NetworkBrowserDelegate {
     public func changed(browser: NetworkBrowser, results: Set<NWBrowser.Result>) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         var foundSelectedAdvertiser = false
 
@@ -198,7 +200,7 @@ extension RemoteLoggerManager: NetworkBrowserDelegate {
         for result in results {
             if case let NWEndpoint.service(name: name, type: type, domain: domain, interface: _) = result.endpoint {
                 if name != self.advertisingName {
-                    // netlog.debug("NetworkBrowser found \(name)")
+                    // lllog.debug("NetworkBrowser found \(name)")
                     self.results.append(result)
                     let advertiser = AdvertiserInfo(name: name, type: type, domain: domain, hashValueRef: result.endpoint.hashValue)
                     if advertiser.hashValueRef == selectedAdvertiser?.hashValueRef {
@@ -236,7 +238,7 @@ extension RemoteLoggerManager: NetworkBrowserDelegate {
 @available(iOS 13.0, *)
 extension RemoteLoggerManager: NetworkAdvertiserDelegate {
     public func connected(_ connection: NetworkConnection) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         if receiveDelegate != nil {
             return
@@ -253,7 +255,7 @@ extension RemoteLoggerManager: NetworkAdvertiserDelegate {
 extension RemoteLoggerManager: NetworkConnectionDelegate {
     // When a connection becomes ready, move into RemoteLogger mode.
     public func ready(connection: NetworkConnection) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         if let receiveDelegate = receiveDelegate {
             receiveDelegate.ready(self)
@@ -270,7 +272,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
 
     // Ignore connection failures and messages prior to starting a RemoteLogger.
     public func failed(connection: NetworkConnection) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         self.networkConnection = nil
 
@@ -281,7 +283,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
     }
 
     public func canceled(connection: NetworkConnection) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         self.networkConnection = nil
 
@@ -292,7 +294,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
     }
 
     public func received(connection: NetworkConnection, content: Data?, message: NWProtocolFramer.Message) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         if let receiveDelegate = receiveDelegate {
             guard let content = content else {
@@ -300,7 +302,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
             }
             switch message.remoteLoggerMessageType {
                 case .invalid:
-                    // netlog.error("Received invalid message")
+                    // lllog.error("Received invalid message")
                     break
                 case .log:
                     let log_message = String(data: content, encoding: .unicode)
@@ -317,7 +319,7 @@ extension RemoteLoggerManager: NetworkConnectionDelegate {
 @available(iOS 13.0, *)
 extension RemoteLoggerManager {
     public func sendLog(_ message: String) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard isNetworkConnected else { return }
 
@@ -325,11 +327,10 @@ extension RemoteLoggerManager {
     }
 
     public func sendControl(_ control: String) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard isNetworkConnected else { return }
 
         networkConnection?.sendControl(control)
     }
 }
-
