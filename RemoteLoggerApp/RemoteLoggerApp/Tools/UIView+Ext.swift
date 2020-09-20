@@ -103,10 +103,10 @@ extension UIView {
 
         if let _view = self.superview {
             // 親Viewあり
-            let newInsets: UIEdgeInsets = UIEdgeInsets(top: insets.top + self.frame.origin.y,
-                                                       left: insets.left + self.frame.origin.x,
-                                                       bottom: insets.bottom + (_view.frame.size.height - self.frame.size.height - self.frame.origin.y),
-                                                       right: insets.bottom + (_view.frame.size.width - self.frame.size.width - self.frame.origin.x))
+            let newInsets = UIEdgeInsets(top: insets.top + self.frame.origin.y,
+                                         left: insets.left + self.frame.origin.x,
+                                         bottom: insets.bottom + (_view.frame.size.height - self.frame.size.height - self.frame.origin.y),
+                                         right: insets.bottom + (_view.frame.size.width - self.frame.size.width - self.frame.origin.x))
             if _view == _baseView {
                 return newInsets // 終了
             }

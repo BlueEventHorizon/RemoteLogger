@@ -294,7 +294,7 @@ public final class KeyboardManager {
     // https://developer.apple.com/videos/play/wwdc2017/201/
     // https://qiita.com/BlueEventHorizon/items/bf37428b54b937728dc7
 
-    private var keyValueObservations: [NSKeyValueObservation] = [NSKeyValueObservation]()
+    private var keyValueObservations = [NSKeyValueObservation]()
 
     private func addKVO(scrollView: UIScrollView, _ closure: @escaping () -> Void) {
         let keyValueObservation = scrollView.observe(\.contentOffset, options: [.new]) { _, change in
