@@ -49,10 +49,11 @@ public class NetworkAdvertiser {
     public func start(
         advertisingName name: String,
         passcode: String,
+
         advertiser: NetworkAdvertiserDelegate?,
         connector: NetworkConnectionDelegate?
     ) -> Self {
-        // internalLog.entered(self)
+        // lllog.entered(self)
 
         self.name = name
         self.passcode = passcode
@@ -76,19 +77,19 @@ public class NetworkAdvertiser {
             listener.stateUpdateHandler = { newState in
                 switch newState {
                     case .ready:
-                        internalLog.info("Listener ready on \(String(describing: listener.port))")
+                        lllog.info("Listener ready on \(String(describing: listener.port))")
 
                     case let .failed(error):
                         // If the listener fails, re-start.
-                        internalLog.error("Listener failed with \(error), restarting")
+                        lllog.error("Listener failed with \(error), restarting")
                         listener.cancel()
                         self.start(advertisingName: name, passcode: self.passcode, advertiser: self.advertiser, connector: self.connector)
 
                     case .setup:
-                        internalLog.info("Listener setup")
+                        lllog.info("Listener setup")
 
                     case let .waiting(error):
-                        internalLog.error("Listener waiting with \(error)")
+                        lllog.error("Listener waiting with \(error)")
 
                         guard let networkConnection = self.networkConnection else { return }
 
@@ -96,7 +97,7 @@ public class NetworkAdvertiser {
                         self.networkConnection = nil
 
                     case .cancelled:
-                        internalLog.warning("Listener cancelled")
+                        lllog.warning("Listener cancelled")
                 }
             }
 
@@ -123,7 +124,7 @@ public class NetworkAdvertiser {
             listener.start(queue: .main)
         }
         catch {
-            // internalLog.error("Failed to create listener")
+            // lllog.error("Failed to create listener")
             abort()
         }
 
@@ -132,7 +133,7 @@ public class NetworkAdvertiser {
 
     // If the user changes their name, update the advertised name.
     public func change(advertisingName: String) {
-        // internalLog.entered(self)
+        // lllog.entered(self)
 
         self.name = advertisingName
         if let listener = listener {
@@ -141,4 +142,3 @@ public class NetworkAdvertiser {
         }
     }
 }
-

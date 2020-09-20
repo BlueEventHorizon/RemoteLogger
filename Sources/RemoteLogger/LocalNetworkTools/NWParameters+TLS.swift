@@ -15,7 +15,7 @@ import Network
 extension NWParameters {
     // Create parameters for use in PeerConnection and PeerListener.
     convenience init(preSharedCode code: String, passcode: String, definition: NWProtocolFramer.Definition) {
-        // netlog.entered()
+        // lllog.entered()
 
         // Create parameters with custom TLS and TCP options.
         self.init(tls: NWParameters.tlsOptions(code: code, passcode: passcode), tcp: NWParameters.tcpOption())
@@ -30,7 +30,7 @@ extension NWParameters {
 
     // Customize TCP options to enable keepalives.
     private static func tcpOption() -> NWProtocolTCP.Options {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         let tcpOptions = NWProtocolTCP.Options()
 
@@ -42,7 +42,7 @@ extension NWParameters {
 
     // Create TLS options using a passcode to derive a pre-shared key.
     private static func tlsOptions(code: String, passcode: String) -> NWProtocolTLS.Options {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         let tlsOptions = NWProtocolTLS.Options()
 
@@ -70,7 +70,7 @@ extension NWParameters {
 
     // Create a utility function to encode strings as pre-shared key data.
     private static func stringToDispatchData(_ string: String) -> DispatchData? {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let stringData = string.data(using: .unicode) else {
             return nil

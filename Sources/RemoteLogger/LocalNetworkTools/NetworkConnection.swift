@@ -34,7 +34,7 @@ public class NetworkConnection {
         definition: NWProtocolFramer.Definition,
         connector: NetworkConnectionDelegate
     ) {
-        // netlog.entered()
+        // lllog.entered()
 
         let connection = NWConnection(to: endpoint, using: NWParameters(preSharedCode: preSharedCode, passcode: passcode, definition: definition))
         self.connection = connection
@@ -42,6 +42,8 @@ public class NetworkConnection {
         self.connector = connector
 
         self.initiatedConnection = true
+
+        lllog.info(connection.endpoint.debugDescription)
 
         start()
     }
@@ -52,7 +54,7 @@ public class NetworkConnection {
         definition: NWProtocolFramer.Definition,
         connector: NetworkConnectionDelegate
     ) {
-        // netlog.entered()
+        // lllog.entered()
 
         self.connection = connection
         self.definition = definition
@@ -60,12 +62,14 @@ public class NetworkConnection {
 
         self.initiatedConnection = false
 
+        lllog.info(connection.endpoint.debugDescription)
+
         start()
     }
 
     // Handle the user exiting the NetworkConnection.
     public func cancel() {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         if let connection = self.connection {
             connection.cancel()
@@ -75,26 +79,23 @@ public class NetworkConnection {
 
     // Handle starting the peer-to-peer connection for both inbound and outbound connections.
     private func start() {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let connection = connection else { return }
 
         connection.stateUpdateHandler = { newState in
             switch newState {
                 case .setup:
-                    // netlog.info("initial state")
-                    break
+                    lllog.info("initial state")
 
                 case let .waiting(error):
-                    // netlog.error("no destination \(error.localizedDescription)")
-                    break
+                    lllog.error("no destination \(error.localizedDescription)")
 
                 case .preparing:
-                    // netlog.info("waiting connection")
-                    break
+                    lllog.info("waiting connection")
 
                 case .ready:
-                    // netlog.info("\(connection) established")
+                    lllog.info("\(connection) established")
 
                     // When the connection is ready, start receiving messages.
                     self.receive()
@@ -102,7 +103,7 @@ public class NetworkConnection {
                     self.connector?.ready(connection: self)
 
                 case let .failed(error):
-                    // netlog.error("\(connection) failed with \(error.localizedDescription)")
+                    lllog.error("\(connection) failed with \(error.localizedDescription)")
 
                     // Cancel the connection upon a failure.
                     connection.cancel()
@@ -110,7 +111,7 @@ public class NetworkConnection {
                     self.connector?.failed(connection: self)
 
                 case .cancelled:
-                    // netlog.info("cancelled")
+                    lllog.info("cancelled")
 
                     connection.cancel()
 
@@ -124,7 +125,7 @@ public class NetworkConnection {
 
     // Receive a message, deliver it to your connector, and continue receiving more messages.
     public func receive() {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let connection = connection else { return }
 
@@ -146,7 +147,7 @@ public class NetworkConnection {
     }
 
     public func send(_ dataString: String, identifier: String, messages: [NWProtocolFramer.Message]) {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         guard let connection = connection else { return }
 

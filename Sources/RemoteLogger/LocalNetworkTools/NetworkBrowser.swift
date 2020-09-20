@@ -10,8 +10,6 @@
 import Foundation
 import Network
 
-// let netlog = ToolLogger(prefix: "☀️", enable: false)
-
 @available(iOS 13.0, *)
 public protocol NetworkBrowserDelegate: AnyObject {
     func changed(browser: NetworkBrowser, results: Set<NWBrowser.Result>)
@@ -28,7 +26,7 @@ public class NetworkBrowser {
 
     @discardableResult
     public func start(type: String, delegate: NetworkBrowserDelegate?) -> Self {
-        // netlog.entered(self)
+        // lllog.entered(self)
 
         self.type = type
         self.delegate = delegate
@@ -40,20 +38,17 @@ public class NetworkBrowser {
         browser.stateUpdateHandler = { newState in
             switch newState {
                 case .setup:
-                    // netlog.info("The browser has been initialized but not started.")
-                    break
+                    lllog.info("The browser has been initialized but not started.")
 
                 case .ready:
-                    // netlog.info("The browser is registered for discovering services.")
-                    break
+                    lllog.info("The browser is registered for discovering services.")
 
                 case .cancelled:
-                    // netlog.info("The browser has been canceled.")
-                    break
+                    lllog.info("The browser has been canceled.")
 
                 case let .failed(error):
                     // Restart the browser if it fails.
-                    // netlog.error("The browser has encountered a fatal error \(error), restarting")
+                    lllog.error("The browser has encountered a fatal error \(error), restarting")
                     self.browser.cancel()
                     self.start(type: self.type, delegate: self.delegate)
 
@@ -68,11 +63,9 @@ public class NetworkBrowser {
 
             // 【⚠️⚠️⚠️】Workaround for browseResultsChangedHandler is invoked again in short time without advertiser
             if let timestamp = self.timestamp, timestamp.timeIntervalSince1970 + 0.5 > Date().timeIntervalSince1970 {
-                // netlog.error("browseResultsChangedHandler is invoked again within 0.5 second, count = \(results.count)")
+                lllog.error("browseResultsChangedHandler is invoked again within 0.5 second, count = \(results.count)")
                 return
             }
-
-            // netlog.info("🍎 browser changed count = \(results.count)", instance: self)
 
             self.timestamp = Date()
 

@@ -61,7 +61,7 @@ class RemoteLoggerProtocol: NWProtocolFramerImplementation {
             try framer.writeOutputNoCopy(length: messageLength)
         }
         catch {
-            // netlog.error("Hit error writing \(error)")
+            lllog.error("Hit error writing \(error)")
         }
     }
 

@@ -26,7 +26,7 @@ extension Logger {
             return Logger(RemoteLogger.shared)
         }
         else {
-            return Logger()
+            return Logger.default
         }
     }
 
@@ -37,17 +37,17 @@ extension Logger {
 
     @available(iOS 13.0, *)
     public var myname: String {
-        set {
-            RemoteLogger.shared.myname = newValue
-        }
         get {
             ""
+        }
+        set {
+            RemoteLogger.shared.myname = newValue
         }
     }
 }
 
 @available(iOS 13.0, *)
-public class RemoteLogger {
+public class RemoteLogger: LoggerDependency {
     static let shared = RemoteLogger()
 
     var monitorNamePublisher = Publisher<String>()
@@ -55,39 +55,35 @@ public class RemoteLogger {
     private let manager = RemoteLoggerManager.shared
 
     private init() {
-        // netlog.debug("(1) configuration", instance: self)
-
         manager.browseAdvertiser(delegate: self, autoConnect: true, passcode: "PASSCODE", receiveDelegate: nil)
     }
 
-    public var myname: String {
-        set {
-            manager.sendControl(newValue)
-        }
-        get {
-            ""
-        }
-    }
-}
-
-extension RemoteLogger: LoggerDependency {
     public func log(_ context: LogContext) {
         var preFix: String = ""
 
         switch context.level {
-            case .trace: preFix = "➡️"
-            case .debug: preFix = "[🛠 DEBG]"
+            case .trace: preFix = "===>"
+            case .debug: preFix = "[🟠 DEBG]"
             case .info: preFix = "[🔵 INFO]"
             case .notice: preFix = "[🟢 NOTE]"
             case .warning: preFix = "[⚠️ WARN]"
-            case .error: preFix = "[🚫 ERRR]"
+            case .error: preFix = "[❌ ERRR]"
             case .fatal: preFix = "[🔥 FATAL]"
             case .deinit: preFix = "[❎ DEINIT]"
         }
 
         let formatted = preFix + context.buildMessage()
-        manager.sendLog(formatted)
         print(formatted)
+        manager.sendLog(formatted)
+    }
+
+    public var myname: String {
+        get {
+            ""
+        }
+        set {
+            manager.sendControl(newValue)
+        }
     }
 }
 
