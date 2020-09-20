@@ -1,6 +1,6 @@
 # RemoteLogger
 
- [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Carthage/Carthage/master/LICENSE.md)
+ [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Carthage/Carthage/master/LICENSE.md) [![SPM supported](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager)
 
 **RemoteLogger is the logging tool for output log to the another device through local network**
 
@@ -29,6 +29,8 @@ The network core modules described below come from [Apple's example](https://dev
         └── RemoteLoggerCore
             └── RemoteLoggerProtocol.swift
 ```
+
+And all other source codes are also provided by MIT license.
 
 
 ## How to use package
