@@ -21,7 +21,19 @@
 		7647FD2F24BF23C7000EE3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7647FD2D24BF23C7000EE3CA /* LaunchScreen.storyboard */; };
 		7647FD3A24BF23C7000EE3CA /* RemoteLoggerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */; };
 		76624E9624C0498A00137BFE /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 76624E9524C0498A00137BFE /* Logger */; };
-		7685181D24C8010C00E3F99A /* RemoteLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7685181C24C8010C00E3F99A /* RemoteLogger */; };
+		7699471E25179F3400E19AD8 /* RemoteLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7699471525179F3300E19AD8 /* RemoteLogger.framework */; };
+		7699472525179F3400E19AD8 /* RemoteLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699472425179F3400E19AD8 /* RemoteLoggerTests.swift */; };
+		7699472725179F3400E19AD8 /* RemoteLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 7699471725179F3300E19AD8 /* RemoteLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7699472A25179F3400E19AD8 /* RemoteLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7699471525179F3300E19AD8 /* RemoteLogger.framework */; };
+		7699472B25179F3400E19AD8 /* RemoteLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7699471525179F3300E19AD8 /* RemoteLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7699474025179F4900E19AD8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7699473725179F4900E19AD8 /* LICENSE.txt */; };
+		7699474125179F4900E19AD8 /* NetworkAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473825179F4900E19AD8 /* NetworkAdvertiser.swift */; };
+		7699474225179F4900E19AD8 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473925179F4900E19AD8 /* NetworkConnection.swift */; };
+		7699474325179F4900E19AD8 /* NetworkBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473A25179F4900E19AD8 /* NetworkBrowser.swift */; };
+		7699474425179F4900E19AD8 /* NWParameters+TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473B25179F4900E19AD8 /* NWParameters+TLS.swift */; };
+		7699474525179F4900E19AD8 /* LowLayerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473C25179F4900E19AD8 /* LowLayerLogger.swift */; };
+		7699474625179F4900E19AD8 /* RemoteLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473E25179F4900E19AD8 /* RemoteLoggerProtocol.swift */; };
+		7699474725179F4900E19AD8 /* RemoteLoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699473F25179F4900E19AD8 /* RemoteLoggerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +44,42 @@
 			remoteGlobalIDString = 7647FD1E24BF23C6000EE3CA;
 			remoteInfo = RemoteLoggerApp;
 		};
+		7699471F25179F3400E19AD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7647FD1724BF23C6000EE3CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7699471425179F3300E19AD8;
+			remoteInfo = RemoteLogger;
+		};
+		7699472125179F3400E19AD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7647FD1724BF23C6000EE3CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7647FD1E24BF23C6000EE3CA;
+			remoteInfo = RemoteLoggerApp;
+		};
+		7699472825179F3400E19AD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7647FD1724BF23C6000EE3CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7699471425179F3300E19AD8;
+			remoteInfo = RemoteLogger;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7699472F25179F3400E19AD8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7699472B25179F3400E19AD8 /* RemoteLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		76046B6224C48EA4005D8D03 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
@@ -51,6 +98,20 @@
 		7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteLoggerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7647FD3924BF23C7000EE3CA /* RemoteLoggerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoggerAppTests.swift; sourceTree = "<group>"; };
 		7647FD3B24BF23C7000EE3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7699471525179F3300E19AD8 /* RemoteLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RemoteLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7699471725179F3300E19AD8 /* RemoteLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteLogger.h; sourceTree = "<group>"; };
+		7699471825179F3300E19AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7699471D25179F3400E19AD8 /* RemoteLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7699472425179F3400E19AD8 /* RemoteLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoggerTests.swift; sourceTree = "<group>"; };
+		7699472625179F3400E19AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7699473725179F4900E19AD8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		7699473825179F4900E19AD8 /* NetworkAdvertiser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdvertiser.swift; sourceTree = "<group>"; };
+		7699473925179F4900E19AD8 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		7699473A25179F4900E19AD8 /* NetworkBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBrowser.swift; sourceTree = "<group>"; };
+		7699473B25179F4900E19AD8 /* NWParameters+TLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWParameters+TLS.swift"; sourceTree = "<group>"; };
+		7699473C25179F4900E19AD8 /* LowLayerLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowLayerLogger.swift; sourceTree = "<group>"; };
+		7699473E25179F4900E19AD8 /* RemoteLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLoggerProtocol.swift; sourceTree = "<group>"; };
+		7699473F25179F4900E19AD8 /* RemoteLoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLoggerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7699472A25179F3400E19AD8 /* RemoteLogger.framework in Frameworks */,
 				76624E9624C0498A00137BFE /* Logger in Frameworks */,
-				7685181D24C8010C00E3F99A /* RemoteLogger in Frameworks */,
 				760F83B424C1FF8C000C46B3 /* PPublisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +129,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7699471225179F3300E19AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7699471A25179F3400E19AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699471E25179F3400E19AD8 /* RemoteLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +166,8 @@
 			children = (
 				7647FD2124BF23C6000EE3CA /* RemoteLoggerApp */,
 				7647FD3824BF23C7000EE3CA /* RemoteLoggerAppTests */,
+				7699471625179F3300E19AD8 /* RemoteLogger */,
+				7699472325179F3400E19AD8 /* RemoteLoggerTests */,
 				7647FD2024BF23C6000EE3CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +177,8 @@
 			children = (
 				7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */,
 				7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */,
+				7699471525179F3300E19AD8 /* RemoteLogger.framework */,
+				7699471D25179F3400E19AD8 /* RemoteLoggerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,7 +208,62 @@
 			path = RemoteLoggerAppTests;
 			sourceTree = "<group>";
 		};
+		7699471625179F3300E19AD8 /* RemoteLogger */ = {
+			isa = PBXGroup;
+			children = (
+				7699473625179F4900E19AD8 /* LocalNetworkTools */,
+				7699473D25179F4900E19AD8 /* RemoteLoggerCore */,
+				7699471725179F3300E19AD8 /* RemoteLogger.h */,
+				7699471825179F3300E19AD8 /* Info.plist */,
+			);
+			path = RemoteLogger;
+			sourceTree = "<group>";
+		};
+		7699472325179F3400E19AD8 /* RemoteLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7699472425179F3400E19AD8 /* RemoteLoggerTests.swift */,
+				7699472625179F3400E19AD8 /* Info.plist */,
+			);
+			path = RemoteLoggerTests;
+			sourceTree = "<group>";
+		};
+		7699473625179F4900E19AD8 /* LocalNetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+				7699473C25179F4900E19AD8 /* LowLayerLogger.swift */,
+				7699473725179F4900E19AD8 /* LICENSE.txt */,
+				7699473825179F4900E19AD8 /* NetworkAdvertiser.swift */,
+				7699473925179F4900E19AD8 /* NetworkConnection.swift */,
+				7699473A25179F4900E19AD8 /* NetworkBrowser.swift */,
+				7699473B25179F4900E19AD8 /* NWParameters+TLS.swift */,
+			);
+			name = LocalNetworkTools;
+			path = ../../Sources/RemoteLogger/LocalNetworkTools;
+			sourceTree = "<group>";
+		};
+		7699473D25179F4900E19AD8 /* RemoteLoggerCore */ = {
+			isa = PBXGroup;
+			children = (
+				7699473E25179F4900E19AD8 /* RemoteLoggerProtocol.swift */,
+				7699473F25179F4900E19AD8 /* RemoteLoggerManager.swift */,
+			);
+			name = RemoteLoggerCore;
+			path = ../../Sources/RemoteLogger/RemoteLoggerCore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7699471025179F3300E19AD8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699472725179F3400E19AD8 /* RemoteLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */ = {
@@ -139,16 +274,17 @@
 				7647FD1C24BF23C6000EE3CA /* Frameworks */,
 				7647FD1D24BF23C6000EE3CA /* Resources */,
 				76CF87F924C6C0290008B31A /* Swiftformat Script */,
+				7699472F25179F3400E19AD8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7699472925179F3400E19AD8 /* PBXTargetDependency */,
 			);
 			name = RemoteLoggerApp;
 			packageProductDependencies = (
 				76624E9524C0498A00137BFE /* Logger */,
 				760F83B324C1FF8C000C46B3 /* PPublisher */,
-				7685181C24C8010C00E3F99A /* RemoteLogger */,
 			);
 			productName = RemoteLoggerApp;
 			productReference = 7647FD1F24BF23C6000EE3CA /* RemoteLoggerApp.app */;
@@ -172,13 +308,50 @@
 			productReference = 7647FD3524BF23C7000EE3CA /* RemoteLoggerAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7699471425179F3300E19AD8 /* RemoteLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7699472C25179F3400E19AD8 /* Build configuration list for PBXNativeTarget "RemoteLogger" */;
+			buildPhases = (
+				7699471025179F3300E19AD8 /* Headers */,
+				7699471125179F3300E19AD8 /* Sources */,
+				7699471225179F3300E19AD8 /* Frameworks */,
+				7699471325179F3300E19AD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoteLogger;
+			productName = RemoteLogger;
+			productReference = 7699471525179F3300E19AD8 /* RemoteLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7699471C25179F3400E19AD8 /* RemoteLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7699473025179F3400E19AD8 /* Build configuration list for PBXNativeTarget "RemoteLoggerTests" */;
+			buildPhases = (
+				7699471925179F3400E19AD8 /* Sources */,
+				7699471A25179F3400E19AD8 /* Frameworks */,
+				7699471B25179F3400E19AD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7699472025179F3400E19AD8 /* PBXTargetDependency */,
+				7699472225179F3400E19AD8 /* PBXTargetDependency */,
+			);
+			name = RemoteLoggerTests;
+			productName = RemoteLoggerTests;
+			productReference = 7699471D25179F3400E19AD8 /* RemoteLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7647FD1724BF23C6000EE3CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = k2terada;
 				TargetAttributes = {
@@ -187,6 +360,14 @@
 					};
 					7647FD3424BF23C7000EE3CA = {
 						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7647FD1E24BF23C6000EE3CA;
+					};
+					7699471425179F3300E19AD8 = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+					};
+					7699471C25179F3400E19AD8 = {
+						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 7647FD1E24BF23C6000EE3CA;
 					};
 				};
@@ -203,7 +384,6 @@
 			packageReferences = (
 				76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */,
 				760F83B224C1FF8C000C46B3 /* XCRemoteSwiftPackageReference "PPublisher" */,
-				7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */,
 			);
 			productRefGroup = 7647FD2024BF23C6000EE3CA /* Products */;
 			projectDirPath = "";
@@ -211,6 +391,8 @@
 			targets = (
 				7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */,
 				7647FD3424BF23C7000EE3CA /* RemoteLoggerAppTests */,
+				7699471425179F3300E19AD8 /* RemoteLogger */,
+				7699471C25179F3400E19AD8 /* RemoteLoggerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +409,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7647FD3324BF23C7000EE3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7699471325179F3300E19AD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699474025179F4900E19AD8 /* LICENSE.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7699471B25179F3400E19AD8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,6 +477,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7699471125179F3300E19AD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699474425179F4900E19AD8 /* NWParameters+TLS.swift in Sources */,
+				7699474225179F4900E19AD8 /* NetworkConnection.swift in Sources */,
+				7699474325179F4900E19AD8 /* NetworkBrowser.swift in Sources */,
+				7699474725179F4900E19AD8 /* RemoteLoggerManager.swift in Sources */,
+				7699474125179F4900E19AD8 /* NetworkAdvertiser.swift in Sources */,
+				7699474525179F4900E19AD8 /* LowLayerLogger.swift in Sources */,
+				7699474625179F4900E19AD8 /* RemoteLoggerProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7699471925179F3400E19AD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699472525179F3400E19AD8 /* RemoteLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -287,6 +506,21 @@
 			isa = PBXTargetDependency;
 			target = 7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */;
 			targetProxy = 7647FD3624BF23C7000EE3CA /* PBXContainerItemProxy */;
+		};
+		7699472025179F3400E19AD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7699471425179F3300E19AD8 /* RemoteLogger */;
+			targetProxy = 7699471F25179F3400E19AD8 /* PBXContainerItemProxy */;
+		};
+		7699472225179F3400E19AD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7647FD1E24BF23C6000EE3CA /* RemoteLoggerApp */;
+			targetProxy = 7699472125179F3400E19AD8 /* PBXContainerItemProxy */;
+		};
+		7699472925179F3400E19AD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7699471425179F3300E19AD8 /* RemoteLogger */;
+			targetProxy = 7699472825179F3400E19AD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -427,6 +661,7 @@
 		7647FD3F24BF23C7000EE3CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6A5KP29BP;
@@ -446,6 +681,7 @@
 		7647FD4024BF23C7000EE3CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6A5KP29BP;
@@ -506,6 +742,111 @@
 			};
 			name = Release;
 		};
+		7699472D25179F3400E19AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RemoteLogger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.app.RemoteLogger";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7699472E25179F3400E19AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RemoteLogger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.app.RemoteLogger";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7699473125179F3400E19AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.app.RemoteLoggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RemoteLoggerApp.app/RemoteLoggerApp";
+			};
+			name = Debug;
+		};
+		7699473225179F3400E19AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6A5KP29BP;
+				INFOPLIST_FILE = RemoteLoggerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beowulf-tech.app.RemoteLoggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RemoteLoggerApp.app/RemoteLoggerApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,6 +877,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7699472C25179F3400E19AD8 /* Build configuration list for PBXNativeTarget "RemoteLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7699472D25179F3400E19AD8 /* Debug */,
+				7699472E25179F3400E19AD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7699473025179F3400E19AD8 /* Build configuration list for PBXNativeTarget "RemoteLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7699473125179F3400E19AD8 /* Debug */,
+				7699473225179F3400E19AD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -555,14 +914,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:BlueEventHorizon/RemoteLogger.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.7;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -575,11 +926,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 76624E9424C0498A00137BFE /* XCRemoteSwiftPackageReference "Logger" */;
 			productName = Logger;
-		};
-		7685181C24C8010C00E3F99A /* RemoteLogger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7685181B24C8010C00E3F99A /* XCRemoteSwiftPackageReference "RemoteLogger" */;
-			productName = RemoteLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
