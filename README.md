@@ -15,7 +15,7 @@ It means you can see your app's log on a real iPhone/iPad device by another one 
 
 RemoteLogger works only after iOS13 since it uses Network Framework.
 
-The network core modules described below come from [Apple's example](https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol). So if you use this code, you must comply with the [license](.//Sources/RemoteLogger/LocalNetworkTools/LICENSE.txt)
+The network core modules described below come from [Apple's example](https://developer.apple.com/documentation/network/building_a_custom_peer-to-peer_protocol). So if you use this code, you must comply with the [license](./LICENSE.txt)
 
 ```
 
