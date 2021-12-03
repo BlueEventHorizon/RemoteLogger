@@ -20,14 +20,14 @@ class ViewController: UIViewController {
     private var bag = SubscriptionBag()
     private var keyboardManager = KeyboardManager.shared
     private var appName: String?
-    @IBOutlet weak var top: NSLayoutConstraint!
-    @IBOutlet weak var bottom: NSLayoutConstraint!
-    @IBOutlet weak var targetViewToScroll: UIView!
+    @IBOutlet var top: NSLayoutConstraint!
+    @IBOutlet var bottom: NSLayoutConstraint!
+    @IBOutlet var targetViewToScroll: UIView!
 
-    @IBOutlet weak var monitorNameLabel: UILabel!
-    @IBOutlet weak var logMessageTextField: UITextField!
+    @IBOutlet var monitorNameLabel: UILabel!
+    @IBOutlet var logMessageTextField: UITextField!
 
-    @IBOutlet weak var logLebelSelectorStack: UIStackView!
+    @IBOutlet var logLebelSelectorStack: UIStackView!
 
     @IBAction func sendLog(_ sender: Any) {
         sendLog()

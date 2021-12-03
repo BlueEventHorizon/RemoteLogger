@@ -113,8 +113,7 @@ public class NetworkAdvertiser {
 
                         advertiser.connected(connection)
                     }
-                }
-                else {
+                } else {
                     // If a NetworkConnection is already in progress, reject it.
                     newConnection.cancel()
                 }
@@ -122,8 +121,7 @@ public class NetworkAdvertiser {
 
             // Start listening, and request updates on the main queue.
             listener.start(queue: .main)
-        }
-        catch {
+        } catch {
             // lllog.error("Failed to create listener")
             abort()
         }

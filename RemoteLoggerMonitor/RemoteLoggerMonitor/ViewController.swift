@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     private var appName: String?
     private var logall: String = ""
 
-    @IBOutlet weak var loggerName: UILabel!
-    @IBOutlet weak var collectionParentView: UIView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet var loggerName: UILabel!
+    @IBOutlet var collectionParentView: UIView!
+    @IBOutlet var textView: UITextView!
     @IBAction func pushedClear(_ sender: Any) {
         logall = ""
         textView.text = logall

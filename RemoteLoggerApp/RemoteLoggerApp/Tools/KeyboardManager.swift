@@ -159,8 +159,7 @@ public final class KeyboardManager {
                 self.top?.constant = -shift // レイアウト変更
                 self.bottom?.constant = shift // レイアウト変更
             }
-        }
-        else if shift < 0 {
+        } else if shift < 0 {
             // log.warning("移動量がマイナス!?")
             animate = self.top?.constant != -shift
             if animate {
@@ -174,8 +173,7 @@ public final class KeyboardManager {
                     self.bottom?.constant = 0
                 }
             }
-        }
-        else {
+        } else {
             // log.info("元に戻る")
 
             animate = self.top?.constant != 0
@@ -196,8 +194,7 @@ public final class KeyboardManager {
             }, completion: { _ in
                 moveCompletion?()
             })
-        }
-        else {
+        } else {
             baseView.layoutIfNeeded()
             moveCompletion?()
         }
@@ -237,8 +234,7 @@ public final class KeyboardManager {
                     shift = (firstResponderBottom - scrolled) - keyboardTop
                     if let bottomConstarint = self.bottom?.constant {
                         shift += bottomConstarint
-                    }
-                    else if let topConstraint = self.top?.constant {
+                    } else if let topConstraint = self.top?.constant {
                         shift -= topConstraint // topConstraintはマイナスなので減算
                     }
 
@@ -260,21 +256,18 @@ public final class KeyboardManager {
                         }
                     }
                     scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: 0, y: scrolled + toScroll), size: scrollView.frame.size), animated: true)
-                }
-                else {
+                } else {
                     // log.info("*** UIScrollViewがありません ***")
                     // log.info("入力底部 = \(firstResponderBottom) キーボード上部 = \(keyboardTop)")
 
                     shift = firstResponderBottom - keyboardTop
                     if let bottomConstarint = self.bottom?.constant {
                         shift += bottomConstarint
-                    }
-                    else if let topConstraint = self.top?.constant {
+                    } else if let topConstraint = self.top?.constant {
                         shift -= topConstraint // topConstraintはマイナスなので減算
                     }
                 }
-            }
-            else {
+            } else {
                 // log.info("*** firstResponderが見つかりません ***")
             }
 
@@ -322,8 +315,7 @@ public final class KeyboardManager {
             tapGestureRecognizer.numberOfTapsRequired = 1
             baseView?.isUserInteractionEnabled = true
             baseView?.addGestureRecognizer(tapGestureRecognizer)
-        }
-        else {
+        } else {
             baseView?.removeGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -421,11 +413,9 @@ extension KeyboardManager {
         if let _firstResponder = firstResponderStoredText {
             if let _textField = _firstResponder as? UITextField {
                 _textField.text = textOfFirstResponder
-            }
-            else if let _textView = _firstResponder as? UITextView {
+            } else if let _textView = _firstResponder as? UITextView {
                 _textView.text = textOfFirstResponder
-            }
-            else if let _searchBar = _firstResponder as? UISearchBar {
+            } else if let _searchBar = _firstResponder as? UISearchBar {
                 _searchBar.text = textOfFirstResponder
             }
         }
@@ -437,11 +427,9 @@ extension KeyboardManager {
 
             if let _textField = _firstResponder as? UITextField {
                 textOfFirstResponder = _textField.text
-            }
-            else if let _textView = _firstResponder as? UITextView {
+            } else if let _textView = _firstResponder as? UITextView {
                 textOfFirstResponder = _textView.text
-            }
-            else if let _searchBar = _firstResponder as? UISearchBar {
+            } else if let _searchBar = _firstResponder as? UISearchBar {
                 textOfFirstResponder = _searchBar.text
             }
         }

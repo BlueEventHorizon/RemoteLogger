@@ -97,8 +97,7 @@ class LowLayerLogger {
 
         if className.isEmpty, let _fileName = fileName.components(separatedBy: ".").first {
             string = "\(string) \(classInfoSepalator) \(_fileName):\(function)"
-        }
-        else {
+        } else {
             string += "\(classInfoSepalator) \(String(describing: type(of: instance))):\(function)"
         }
 
@@ -123,11 +122,9 @@ class LowLayerLogger {
         if !Thread.isMainThread {
             if let _threadName = Thread.current.name, !_threadName.isEmpty {
                 threadName = _threadName
-            }
-            else if let _queueName = String(validatingUTF8: __dispatch_queue_get_label(nil)), !_queueName.isEmpty {
+            } else if let _queueName = String(validatingUTF8: __dispatch_queue_get_label(nil)), !_queueName.isEmpty {
                 threadName = _queueName
-            }
-            else {
+            } else {
                 threadName = Thread.current.description
             }
         }

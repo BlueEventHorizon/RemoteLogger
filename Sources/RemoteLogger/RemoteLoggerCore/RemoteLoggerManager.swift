@@ -87,8 +87,7 @@ extension RemoteLoggerManager {
         if let browserDelegate = networkAdvertiser {
             // If your app is already listening, just update the name.
             browserDelegate.change(advertisingName: advertisingName)
-        }
-        else {
+        } else {
             networkAdvertiser = NetworkAdvertiser(
                 type: advertiserType,
                 preSharedCode: preSharedCode,
@@ -224,8 +223,7 @@ extension RemoteLoggerManager: NetworkBrowserDelegate {
                 connectToAdvertiser(passcode: passcode)
                 browserDelegate?.connected(advertiser: advertiser)
             }
-        }
-        else {
+        } else {
             browserDelegate?.changed(advertisers: advertisers)
         }
     }

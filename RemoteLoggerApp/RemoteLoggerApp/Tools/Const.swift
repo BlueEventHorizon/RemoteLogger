@@ -11,8 +11,8 @@ import UIKit
 
 public enum Const {}
 
-public extension Const {
-    enum Duration {
+extension Const {
+    public enum Duration {
         public static let none: TimeInterval = 0.0
         public static let moment: TimeInterval = 0.05
         public static let fast: TimeInterval = 0.15
@@ -21,8 +21,8 @@ public extension Const {
     }
 }
 
-public extension Const {
-    enum Opacity {
+extension Const {
+    public enum Opacity {
         static let none: CGFloat = 0.0
         static let half: CGFloat = 0.5
         static let full: CGFloat = 1.0

@@ -87,8 +87,7 @@ extension UIView {
                                    y: point.y + self.frame.origin.y)
             if _view == _baseView {
                 return newPoint // 終了
-            }
-            else {
+            } else {
                 return _view.relativePosition(on: _baseView, point: newPoint)
             }
         }
@@ -109,8 +108,7 @@ extension UIView {
                                          right: insets.bottom + (_view.frame.size.width - self.frame.size.width - self.frame.origin.x))
             if _view == _baseView {
                 return newInsets // 終了
-            }
-            else {
+            } else {
                 return _view.relativeInsets(to: _baseView, insets: newInsets)
             }
         }

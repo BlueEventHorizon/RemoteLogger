@@ -59,8 +59,7 @@ class RemoteLoggerProtocol: NWProtocolFramerImplementation {
         // Ask the connection to insert the content of the application message after your header.
         do {
             try framer.writeOutputNoCopy(length: messageLength)
-        }
-        catch {
+        } catch {
             lllog.error("Hit error writing \(error)")
         }
     }
@@ -72,7 +71,7 @@ class RemoteLoggerProtocol: NWProtocolFramerImplementation {
             var tempHeader: RemoteLoggerProtocolHeader?
             let headerSize = RemoteLoggerProtocolHeader.encodedSize
             let parsed = framer.parseInput(minimumIncompleteLength: headerSize,
-                                           maximumLength: headerSize) { (buffer, _) -> Int in
+                                           maximumLength: headerSize) { buffer, _ -> Int in
                 guard let buffer = buffer else {
                     return 0
                 }
@@ -115,8 +114,7 @@ extension NWProtocolFramer.Message {
         get {
             if let type = self["RemoteLoggerMessageType"] as? RemoteLoggerMessageType {
                 return type
-            }
-            else {
+            } else {
                 return .invalid
             }
         }

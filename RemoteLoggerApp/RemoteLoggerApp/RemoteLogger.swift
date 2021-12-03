@@ -24,8 +24,7 @@ extension Logger {
     public static func remoteLogger() -> Logger {
         if #available(iOS 13.0, *) {
             return Logger(RemoteLogger.shared)
-        }
-        else {
+        } else {
             return Logger.default
         }
     }
